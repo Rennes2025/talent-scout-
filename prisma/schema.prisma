@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// ─── Club recruteur ───────────────────────────────────────────────────────────
+model Club {
+  id           String   @id @default(cuid())
+  name         String
+  country      String
+  league       String
+  region       String   // "EU" | "MIDDLE_EAST"
+  logo         String?
+  contactName  String?
+  contactEmail String?
+  contactPhone String?
+  status       String   @default("PROSPECT")
+  // PROSPECT | CONTACTE | RDV_PLANIFIE | EN_ATTENTE | RELANCE | INTERESSE | NEGOCIE | CLOTURE
+  notes        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  rdvs     Rdv[]
+  relances Relance[]
+}
+
+// ─── Rendez-vous ──────────────────────────────────────────────────────────────
+model Rdv {
+  id       String   @id @default(cuid())
+  clubId   String
+  club     Club     @relation(fields: [clubId], references: [id], onDelete: Cascade)
+  title    String
+  date     DateTime
+  location String?
+  type     String   @default("VISIO")
+  // VISIO | TERRAIN | ESSAI | MATCH | REUNION
+  notes    String?
+  status   String   @default("PLANIFIE")
+  // PLANIFIE | CONFIRME | EFFECTUE | ANNULE
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ─── Relance (follow-up) ──────────────────────────────────────────────────────
+model Relance {
+  id        String    @id @default(cuid())
+  clubId    String
+  club      Club      @relation(fields: [clubId], references: [id], onDelete: Cascade)
+  message   String
+  channel   String    @default("EMAIL")
+  // EMAIL | TELEPHONE | WHATSAPP | LINKEDIN
+  dueDate   DateTime
+  done      Boolean   @default(false)
+  doneAt    DateTime?
+  createdAt DateTime  @default(now())
+}
+
+// ─── Événement recrutement ────────────────────────────────────────────────────
+model Event {
+  id          String    @id @default(cuid())
+  title       String
+  description String?
+  startDate   DateTime
+  endDate     DateTime?
+  location    String
+  country     String
+  type        String    @default("TOURNOI")
+  // TOURNOI | STAGE | MATCH_INTERNATIONAL | SHOWCASE | COMBINE | COUPE
+  importance  String    @default("NORMAL")
+  // NORMAL | IMPORTANT | CRITIQUE
+  tags        String?   // JSON stringifié ex: ["France U19","UEFA"]
+  createdAt   DateTime  @default(now())
+}

@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/src/generated/prisma
+
+# Base de données locale
+*.db
+*.db-journal
+prisma/dev.db*
+dev.db*
+
+# Vidéos (trop lourdes pour GitHub)
+/public/videos/
+
+# Photos WhatsApp (originales non renommées)
+public/WhatsApp*
+
+# Claude
+.claude/

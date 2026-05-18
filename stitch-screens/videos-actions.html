@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Video Portfolio - Elite Scout</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Metropolis:wght@400;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#8e9099",
+                      "surface": "#0c141b",
+                      "on-secondary-fixed": "#191c1d",
+                      "error": "#ffb4ab",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-primary-fixed": "#001b3d",
+                      "primary-fixed": "#d6e3ff",
+                      "inverse-surface": "#dbe3ed",
+                      "outline-variant": "#44474e",
+                      "error-container": "#93000a",
+                      "inverse-primary": "#495f84",
+                      "on-surface": "#dbe3ed",
+                      "on-background": "#dbe3ed",
+                      "surface-container-low": "#141c23",
+                      "on-tertiary-container": "#4f3e00",
+                      "primary-container": "#001b3d",
+                      "surface-container-lowest": "#070f16",
+                      "secondary-fixed-dim": "#c5c7c8",
+                      "tertiary": "#e9c349",
+                      "secondary": "#c5c7c8",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-error": "#690005",
+                      "primary": "#b1c7f2",
+                      "on-secondary": "#2e3132",
+                      "surface-container": "#182028",
+                      "surface-container-highest": "#2e363d",
+                      "surface-bright": "#323a42",
+                      "on-tertiary": "#3c2f00",
+                      "on-secondary-container": "#babcbd",
+                      "on-surface-variant": "#c4c6cf",
+                      "on-primary-container": "#6f84ac",
+                      "background": "#0c141b",
+                      "on-error-container": "#ffdad6",
+                      "secondary-fixed": "#e1e3e4",
+                      "on-primary": "#193053",
+                      "on-secondary-fixed-variant": "#454748",
+                      "surface-variant": "#2e363d",
+                      "inverse-on-surface": "#293139",
+                      "surface-container-high": "#232b32",
+                      "on-primary-fixed-variant": "#31476b",
+                      "tertiary-fixed": "#ffe088",
+                      "surface-tint": "#b1c7f2",
+                      "surface-dim": "#0c141b",
+                      "primary-fixed-dim": "#b1c7f2",
+                      "tertiary-container": "#cca730",
+                      "on-tertiary-fixed": "#241a00",
+                      "secondary-container": "#494c4d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin-desktop": "40px",
+                      "container-max": "1280px",
+                      "margin-mobile": "16px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "stat-value": [
+                              "Oswald"
+                      ],
+                      "body-sm": [
+                              "Metropolis"
+                      ],
+                      "display-lg": [
+                              "Oswald"
+                      ],
+                      "headline-lg": [
+                              "Oswald"
+                      ],
+                      "headline-md": [
+                              "Oswald"
+                      ],
+                      "body-lg": [
+                              "Metropolis"
+                      ],
+                      "body-md": [
+                              "Metropolis"
+                      ],
+                      "label-caps": [
+                              "Metropolis"
+                      ],
+                      "headline-sm": [
+                              "Oswald"
+                      ]
+              },
+              "fontSize": {
+                      "stat-value": [
+                              "36px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "72px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md border-b border-outline-variant/20 h-16 transition-all duration-200">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-full w-full max-w-container-max mx-auto">
+<button class="text-tertiary hover:text-tertiary transition-colors duration-200 active:scale-95 active:opacity-80 flex items-center justify-center p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-tertiary/50">
+<span class="material-symbols-outlined text-[24px]">sports_soccer</span>
+</button>
+<h1 class="font-headline-md text-headline-md tracking-tighter text-tertiary uppercase truncate px-4 text-center">ELITE SCOUT</h1>
+<button class="text-tertiary hover:text-tertiary transition-colors duration-200 active:scale-95 active:opacity-80 flex items-center justify-center p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-tertiary/50">
+<span class="material-symbols-outlined text-[24px]">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[88px] pb-32 md:pb-16 px-margin-mobile md:px-margin-desktop max-w-container-max w-full mx-auto">
+<!-- Section Header -->
+<div class="mb-12 border-b border-outline-variant/20 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background uppercase tracking-tight">VIDÉOS &amp; ACTIONS</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl">A curated collection of match highlights, technical drills, and key analytical actions showcasing elite performance metrics and on-pitch influence.</p>
+</div>
+<!-- Filter Chips (Semantic Addition for Portfolio) -->
+<div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide shrink-0">
+<button class="bg-tertiary text-on-tertiary px-4 py-1.5 rounded-full font-label-caps text-label-caps whitespace-nowrap transition-colors border border-tertiary">ALL CLIPS</button>
+<button class="bg-surface/40 backdrop-blur-sm text-on-surface-variant px-4 py-1.5 rounded-full font-label-caps text-label-caps whitespace-nowrap border border-outline-variant/30 hover:bg-surface-variant transition-colors">GOALS</button>
+<button class="bg-surface/40 backdrop-blur-sm text-on-surface-variant px-4 py-1.5 rounded-full font-label-caps text-label-caps whitespace-nowrap border border-outline-variant/30 hover:bg-surface-variant transition-colors">ASSISTS</button>
+<button class="bg-surface/40 backdrop-blur-sm text-on-surface-variant px-4 py-1.5 rounded-full font-label-caps text-label-caps whitespace-nowrap border border-outline-variant/30 hover:bg-surface-variant transition-colors">TECHNICAL DRILLS</button>
+</div>
+</div>
+<!-- Video Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Video Card 1 -->
+<article class="group relative rounded-xl overflow-hidden bg-surface-container border border-outline-variant/10 aspect-video flex flex-col justify-end cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A dramatic, high-contrast action shot of a soccer player striking a ball during a night match under stadium floodlights. The scene utilizes the Elite Scout design aesthetic, featuring deep ocean blues in the shadows and stark, bright highlights defining the athlete's muscular form. A subtle, transparent digital grid overlays the background, suggesting advanced technical analysis. The overall mood is intense, professional, and hyper-focused on peak athletic performance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAg-NaU-Wsd7erGMIsU807OFOmwi2FCSX_F055f6s95aQudmCE6SVleQnoxIGK93nv517QkwVnFVljj_rZCsP8EpQ_EWgbEsXIKMBoyI7Kw-Yls1YL0ppUKE2PsqEVR3W6ZY6i-cki7FxR6o5hV3fWJtZ1h_hYjC0E5yLIMKuLPwa0q_Qj4ybrrmi0UoUnWz_P7loWbrVZjPMtX-TmUbBetZZ1ISnxHwFTRbEcyHW5YhypyQGj2lf28MCsITRhtQxdaXE3pJTNVLYs');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/95 via-surface/60 to-transparent pointer-events-none"></div>
+<!-- Play Overlay -->
+<div class="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity duration-300 z-10">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest/60 backdrop-blur-md border border-outline-variant/50 flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform duration-300 shadow-[0_0_20px_rgba(233,195,73,0.15)]">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="relative z-20 p-4 w-full">
+<div class="flex gap-2 mb-2">
+<span class="bg-surface-container/80 backdrop-blur-md px-2 py-1 rounded font-label-caps text-label-caps text-tertiary border border-tertiary/30">[GOAL]</span>
+<span class="bg-surface-container/80 backdrop-blur-md px-2 py-1 rounded font-label-caps text-label-caps text-on-surface-variant border border-outline-variant/30">LIGUE 1</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background line-clamp-2 leading-tight">Goal vs Stade Rennais</h3>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant/80 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span>Oct 12, 2023</span>
+<span class="mx-1">•</span>
+<span>0:45</span>
+</div>
+</div>
+</article>
+<!-- Video Card 2 -->
+<article class="group relative rounded-xl overflow-hidden bg-surface-container border border-outline-variant/10 aspect-video flex flex-col justify-end cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A wide, dynamic shot capturing a precise through-ball pass on a professional soccer pitch. The image embraces the Elite Scout visual language with high contrast, deep midnight slate tones in the turf, and sharp, crisp lighting highlighting the trajectory of the ball. A faint, glowing geometric pattern accents the player's positioning. The atmosphere is analytical, clean, and representative of top-tier football scouting data." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBK-_L4WcGEU-s1S6v_qkjW8tdUE1C_BfyOmWdbkLCcP2QNa4c27zLZW5UCnJk3GRe3YjO5Emwc9DfuNLvWxGh9_5ISfzcUWt2zssJDWL-DG_4xWjc0NeGrkIuDg4MleWIVk-tHRg0qSyvKBbl9VbNbAOCbU7MgRlm1bwvijm6wXKqepQH-VMkgjzqrEewp-FfQ-DgcJbNOEoHImeAyyfrjHpiQ1or5dlybNDUgE8imTsqZE19HdCVrT6-K8eAjQuc1ozj7bWdw9fo');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/95 via-surface/60 to-transparent pointer-events-none"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity duration-300 z-10">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest/60 backdrop-blur-md border border-outline-variant/50 flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform duration-300 shadow-[0_0_20px_rgba(233,195,73,0.15)]">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="relative z-20 p-4 w-full">
+<div class="flex gap-2 mb-2">
+<span class="bg-surface-container/80 backdrop-blur-md px-2 py-1 rounded font-label-caps text-label-caps text-tertiary border border-tertiary/30">[ASSIST]</span>
+<span class="bg-surface-container/80 backdrop-blur-md px-2 py-1 rounded font-label-caps text-label-caps text-on-surface-variant border border-outline-variant/30">COUPE DE FRANCE</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background line-clamp-2 leading-tight">Assist vs FC Nantes</h3>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant/80 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span>Nov 05, 2023</span>
+<span class="mx-1">•</span>
+<span>1:12</span>
+</div>
+</div>
+</article>
+<!-- Video Card 3 -->
+<article class="group relative rounded-xl overflow-hidden bg-surface-container border border-outline-variant/10 aspect-video flex flex-col justify-end cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, high-intensity training photograph showing a soccer player maneuvering through practice cones. Set against a dark, moody background typical of the Elite Scout interface, the scene highlights agility and technical precision. The lighting is focused and dramatic, creating sharp silhouettes and emphasizing the texture of the turf and boots. The overall aesthetic is sleek, data-driven, and focused on rigorous athletic development." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5rJ-V-5jhm-_knWtgtPcvLfU15n-ftdBypUkG-nJ_F6tWyRcxwxnbdqJT56CZH-K6uTtl8bY7gfbx26cJKDMDBoPdAdV1_AwGA5RB4dqkncE6MTur5QvDSBWUK1bXaxlop_IYec-jRrkAgBcIb5SqtgifX81X3CN6xvYetAQ-GQUdsU0NanHk-TEM-6stjAswDpM9Eh_uPQ30uOMblmkNU0M_jaONK3rOMAyg3x5Nk8KYrD6c0M4M7aXIZkPzuZUoBh2GTT1fybE');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/95 via-surface/60 to-transparent pointer-events-none"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity duration-300 z-10">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest/60 backdrop-blur-md border border-outline-variant/50 flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform duration-300 shadow-[0_0_20px_rgba(233,195,73,0.15)]">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="relative z-20 p-4 w-full">
+<div class="flex gap-2 mb-2">
+<span class="bg-surface-container/80 backdrop-blur-md px-2 py-1 rounded font-label-caps text-label-caps text-on-surface border border-outline-variant/30">[DRILL]</span>
+<span class="bg-surface-container/80 backdrop-blur-md px-2 py-1 rounded font-label-caps text-label-caps text-on-surface-variant border border-outline-variant/30">TRAINING</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background line-clamp-2 leading-tight">Close Control &amp; Agility Session</h3>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant/80 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span>Dec 01, 2023</span>
+<span class="mx-1">•</span>
+<span>2:30</span>
+</div>
+</div>
+</article>
+<!-- Video Card 4 -->
+<article class="group relative rounded-xl overflow-hidden bg-surface-container border border-outline-variant/10 aspect-video flex flex-col justify-end cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A fast-paced sequence captured from a low angle, showing a defensive interception during a soccer match. The image reflects the premium Elite Scout design system with its deep, desaturated background tones juxtaposed against the bright, sharp action in the foreground. A subtle overlay of tactical arrows hints at spatial awareness. The visual tone is analytical, serious, and deeply engaged with the mechanics of the sport." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB36QvdNYoaeEwKSpmEgglVQ7RAtCmUfCHZO-uc-vqD_-BR2kEhFzmtoMJ_Vnl1nygdNOZnCwS-eWFvdFFr44C3c4f1egCJdDB6vWWC7aySeEyh9SlFxSGRaTjLcTFtRt0tx8Spt4csFLUVVXfnvrIRRnHmvhsktmTq0iiSTAQWSkSJR8whIhaQwS9m0R-c4r9lf3toukJHqOxbt88XyKN4cg0O5oKdyxJMpe2-iABi1NwSVdndsTRqVTtjSbaaOfikXekY2HbyPjg');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/95 via-surface/60 to-transparent pointer-events-none"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity duration-300 z-10">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest/60 backdrop-blur-md border border-outline-variant/50 flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform duration-300 shadow-[0_0_20px_rgba(233,195,73,0.15)]">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="relative z-20 p-4 w-full">
+<div class="flex gap-2 mb-2">
+<span class="bg-surface-container/80 backdrop-blur-md px-2 py-1 rounded font-label-caps text-label-caps text-on-surface border border-outline-variant/30">[DEFENSE]</span>
+<span class="bg-surface-container/80 backdrop-blur-md px-2 py-1 rounded font-label-caps text-label-caps text-on-surface-variant border border-outline-variant/30">LIGUE 1</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background line-clamp-2 leading-tight">Key Interceptions vs OM</h3>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant/80 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span>Jan 15, 2024</span>
+<span class="mx-1">•</span>
+<span>1:05</span>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer (Desktop) -->
+<footer class="hidden md:flex flex-col md:flex-row justify-between items-center py-margin-desktop px-margin-desktop gap-unit w-full max-w-container-max mx-auto bg-surface-container-lowest border-t border-outline-variant/20 z-40 mt-auto">
+<div class="font-headline-sm text-headline-sm text-tertiary">
+            PROSPECT ANALYTICS
+        </div>
+<div class="flex gap-6 items-center">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-tertiary transition-colors opacity-100 hover:opacity-80" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-tertiary transition-colors opacity-100 hover:opacity-80" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-tertiary transition-colors opacity-100 hover:opacity-80" href="#">Agent Portal</a>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+            © 2024 PROSPECT ANALYTICS. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-20 px-2 pb-safe bg-surface-container-highest/80 backdrop-blur-xl border-t border-outline-variant/10 shadow-2xl rounded-t-xl z-50">
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors w-16" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">person</span>
+<span class="font-label-caps text-label-caps text-[10px]">Profile</span>
+</a>
+<!-- Stats (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors w-16" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">leaderboard</span>
+<span class="font-label-caps text-label-caps text-[10px]">Stats</span>
+</a>
+<!-- Videos (Active) -->
+<a class="flex flex-col items-center justify-center text-tertiary bg-surface-bright/40 rounded-full px-4 py-1 scale-90 duration-150 w-20" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-label-caps text-label-caps text-[10px]">Videos</span>
+</a>
+<!-- Contact (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors w-16" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">mail</span>
+<span class="font-label-caps text-label-caps text-[10px]">Contact</span>
+</a>
+</nav>
+</body></html>

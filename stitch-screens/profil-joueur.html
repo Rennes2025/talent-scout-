@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elite Scout - Player Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=Metropolis:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#8e9099",
+                        "surface": "#0c141b",
+                        "on-secondary-fixed": "#191c1d",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary-fixed": "#001b3d",
+                        "primary-fixed": "#d6e3ff",
+                        "inverse-surface": "#dbe3ed",
+                        "outline-variant": "#44474e",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#495f84",
+                        "on-surface": "#dbe3ed",
+                        "on-background": "#dbe3ed",
+                        "surface-container-low": "#141c23",
+                        "on-tertiary-container": "#4f3e00",
+                        "primary-container": "#001b3d",
+                        "surface-container-lowest": "#070f16",
+                        "secondary-fixed-dim": "#c5c7c8",
+                        "tertiary": "#e9c349",
+                        "secondary": "#c5c7c8",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-error": "#690005",
+                        "primary": "#b1c7f2",
+                        "on-secondary": "#2e3132",
+                        "surface-container": "#182028",
+                        "surface-container-highest": "#2e363d",
+                        "surface-bright": "#323a42",
+                        "on-tertiary": "#3c2f00",
+                        "on-secondary-container": "#babcbd",
+                        "on-surface-variant": "#c4c6cf",
+                        "on-primary-container": "#6f84ac",
+                        "background": "#0c141b",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#e1e3e4",
+                        "on-primary": "#193053",
+                        "on-secondary-fixed-variant": "#454748",
+                        "surface-variant": "#2e363d",
+                        "inverse-on-surface": "#293139",
+                        "surface-container-high": "#232b32",
+                        "on-primary-fixed-variant": "#31476b",
+                        "tertiary-fixed": "#ffe088",
+                        "surface-tint": "#b1c7f2",
+                        "surface-dim": "#0c141b",
+                        "primary-fixed-dim": "#b1c7f2",
+                        "tertiary-container": "#cca730",
+                        "on-tertiary-fixed": "#241a00",
+                        "secondary-container": "#494c4d"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "unit": "8px"
+                    },
+                    fontFamily: {
+                        "stat-value": ["Oswald"],
+                        "body-sm": ["Metropolis"],
+                        "display-lg": ["Oswald"],
+                        "headline-lg": ["Oswald"],
+                        "headline-md": ["Oswald"],
+                        "body-lg": ["Metropolis"],
+                        "body-md": ["Metropolis"],
+                        "label-caps": ["Metropolis"],
+                        "headline-sm": ["Oswald"]
+                    },
+                    fontSize: {
+                        "stat-value": ["36px", { lineHeight: "1", fontWeight: "700" }],
+                        "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "display-lg": ["72px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg": ["48px", { lineHeight: "1.2", fontWeight: "600" }],
+                        "headline-md": ["32px", { lineHeight: "1.2", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "700" }],
+                        "headline-sm": ["24px", { lineHeight: "1.3", fontWeight: "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased pt-16 pb-24 md:pb-0 min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md dark:bg-surface/60 border-b border-outline-variant/20 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16">
+<div class="flex items-center gap-2 scale-95 active:opacity-80 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-tertiary dark:text-tertiary text-[28px]">sports_soccer</span>
+<span class="font-headline-md text-headline-md tracking-tighter text-tertiary uppercase">ELITE SCOUT</span>
+</div>
+<!-- Desktop Nav Links (Hidden on mobile) -->
+<nav class="hidden md:flex items-center gap-gutter font-label-caps text-label-caps uppercase">
+<a class="text-tertiary hover:text-tertiary transition-colors duration-200" href="#">Profile</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#">Stats</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#">Videos</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#">Contact</a>
+</nav>
+<button class="scale-95 active:opacity-80 transition-all text-on-surface-variant hover:text-tertiary transition-colors duration-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">account_circle</span>
+</button>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[707px] flex items-end pb-margin-desktop px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" data-alt="A high-action, dramatic photograph of a young, athletic male football player mid-stride during a night match. The scene is illuminated by intense stadium floodlights cutting through a misty atmosphere. The color palette features deep ocean blues and stark midnight slates, accented by glowing gold highlights on the player's kit. The style is hyper-realistic, premium sports photography, emphasizing speed, power, and technical excellence." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4Is0ChVceZHmzfmoVojqODskDe7215hh8c16q56NaSrv0U_sNrkO7O_NtgbULC9-ZbMVLE2EoJuBtwGYjHzpcT9DU-aBKRvNtckXpapZDVcg_Ac06hVQQGnq9fFCN9y5RUTIUJBGkRQJIS52C8uKe3HweiuXX-pBR8Ba8FX1l_02bcp51A8YhEtvxnTuGBNj_m1zx7eopjAdBlv6tCJZmEk0jaNwQ_JB_s_9zC68PNsJomn7ti54PM4nB4cpgWMZSrT0ZLtVOuqs'); background-size: cover; background-position: center;">
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
+<div class="relative z-10 w-full max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-end gap-gutter">
+<div class="flex flex-col gap-unit w-full md:w-2/3">
+<div class="flex flex-wrap gap-2 mb-2">
+<span class="bg-surface-variant/80 backdrop-blur-sm border border-outline-variant/30 text-tertiary font-label-caps text-label-caps uppercase px-3 py-1 rounded">ATTACKING MIDFIELDER</span>
+<span class="bg-surface-variant/80 backdrop-blur-sm border border-outline-variant/30 text-on-surface font-label-caps text-label-caps uppercase px-3 py-1 rounded">AGE 18</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface uppercase drop-shadow-lg">ELITE SCOUT</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-2">
+                        A generational talent redefining the final third. Exceptional vision, precise ball control, and an unrelenting drive to dominate the pitch.
+                    </p>
+</div>
+<!-- Quick Stats floating on hero -->
+<div class="w-full md:w-1/3 grid grid-cols-2 gap-unit">
+<div class="bg-surface/60 backdrop-blur-md border border-outline-variant/20 rounded-xl p-4 flex flex-col justify-center items-center">
+<span class="font-stat-value text-stat-value text-tertiary">92</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-1">Pace</span>
+</div>
+<div class="bg-surface/60 backdrop-blur-md border border-outline-variant/20 rounded-xl p-4 flex flex-col justify-center items-center">
+<span class="font-stat-value text-stat-value text-tertiary">88</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-1">Dribbling</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Stats Overview (Bento Grid) -->
+<section class="py-margin-desktop px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-2 mb-gutter">
+<span class="material-symbols-outlined text-tertiary">leaderboard</span>
+<h2 class="font-headline-md text-headline-md uppercase text-on-surface">Season Performance</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-unit md:gap-gutter">
+<!-- Goals Card -->
+<div class="bg-surface-container/80 backdrop-blur-lg border border-outline-variant/20 rounded-xl p-6 flex flex-col relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[64px] text-tertiary">sports_soccer</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4 tracking-widest">Goals Scored</span>
+<div class="flex items-end gap-2 mt-auto">
+<span class="font-display-lg text-display-lg text-on-surface leading-none">14</span>
+<span class="font-body-sm text-body-sm text-tertiary pb-2">+3 this month</span>
+</div>
+<!-- Fake sparkline using a gradient block -->
+<div class="w-full h-1 mt-6 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[75%] rounded-full"></div>
+</div>
+</div>
+<!-- Assists Card -->
+<div class="bg-surface-container/80 backdrop-blur-lg border border-outline-variant/20 rounded-xl p-6 flex flex-col relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[64px] text-tertiary">moving</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4 tracking-widest">Assists</span>
+<div class="flex items-end gap-2 mt-auto">
+<span class="font-display-lg text-display-lg text-on-surface leading-none">22</span>
+<span class="font-body-sm text-body-sm text-tertiary pb-2">League Leader</span>
+</div>
+<div class="w-full h-1 mt-6 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[90%] rounded-full"></div>
+</div>
+</div>
+<!-- Pass Accuracy Card -->
+<div class="bg-surface-container/80 backdrop-blur-lg border border-outline-variant/20 rounded-xl p-6 flex flex-col relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[64px] text-tertiary">radar</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4 tracking-widest">Pass Accuracy</span>
+<div class="flex items-end gap-2 mt-auto">
+<span class="font-display-lg text-display-lg text-on-surface leading-none">89<span class="text-[32px]">%</span></span>
+<span class="font-body-sm text-body-sm text-outline pb-2">Avg. per 90</span>
+</div>
+<div class="w-full h-1 mt-6 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[89%] rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="py-margin-desktop px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row gap-gutter bg-surface-container-low border border-outline-variant/10 rounded-xl overflow-hidden">
+<div class="w-full md:w-1/2 min-h-[300px] relative">
+<img alt="Player training" class="absolute inset-0 w-full h-full object-cover grayscale opacity-80 mix-blend-luminosity" data-alt="A cinematic, wide-angle shot of a lone football player training on a rugged, windswept coastal pitch in Brittany, France. The sky is overcast and dramatic, conveying a sense of determination and raw talent. The scene is graded with deep blue and slate tones, contrasting with the pale, weathered coastline. The overall mood is intense, focused, and high-performance, fitting a premium scouting aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Nejd_Y3El7zvj0newp_fnmVV_HIs6YGc2IIAhSH_e7STj5Y0bbdMVZn9Ks6Tn6ll9cq1eKHKvIMPQdQlWwE8t2oZIAbqpvTICyhBZ8fXlWOiZTvIhVMDZWW8JwWnH--mKZ6tq9a3B69pQnos2LWm11EWhOv_fSiHwBEoSRFKHcPF2KO7SI6E1ElYViMJKIYOlU2lPIEJLXX0xrvdE0gvJVdBllYeDiOosz0Xgcre9m1dR3PILFzHUcvg1KXB-wtSRZa30pTaqMc"/>
+<div class="absolute inset-0 bg-surface/30"></div>
+</div>
+<div class="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-tertiary uppercase mb-2 tracking-widest">Origin Story</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface uppercase mb-4">Forged in Brittany</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Developing technical mastery on the rugged pitches of northwestern France, the harsh coastal conditions built resilience and an uncompromising work ethic. The academy years focused heavily on spatial awareness and progressive passing under pressure.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-tertiary text-on-tertiary font-label-caps text-label-caps uppercase px-6 py-3 rounded hover:bg-tertiary-fixed transition-colors">
+                            Download Dossier
+                        </button>
+<button class="border border-outline-variant/50 text-on-surface font-label-caps text-label-caps uppercase px-6 py-3 rounded hover:bg-surface-variant transition-colors">
+                            View Video
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-20 px-2 pb-safe bg-surface-container-highest/80 backdrop-blur-xl dark:bg-surface-container-highest/80 rounded-t-xl border-t border-outline-variant/10 shadow-2xl z-50">
+<!-- Active Tab: Profile -->
+<button class="flex flex-col items-center justify-center text-tertiary bg-surface-bright/40 rounded-full px-4 py-1 Active: scale-90 duration-150 group">
+<span class="material-symbols-outlined fill text-[24px]">person</span>
+<span class="font-label-caps text-[10px] mt-1 group-hover:text-on-surface uppercase">Profile</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface Active: scale-90 duration-150 group">
+<span class="material-symbols-outlined text-[24px]">leaderboard</span>
+<span class="font-label-caps text-[10px] mt-1 uppercase">Stats</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface Active: scale-90 duration-150 group">
+<span class="material-symbols-outlined text-[24px]">play_circle</span>
+<span class="font-label-caps text-[10px] mt-1 uppercase">Videos</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface Active: scale-90 duration-150 group">
+<span class="material-symbols-outlined text-[24px]">mail</span>
+<span class="font-label-caps text-[10px] mt-1 uppercase">Contact</span>
+</button>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 w-full mt-auto mb-20 md:mb-0">
+<div class="flex flex-col md:flex-row justify-between items-center py-margin-desktop px-margin-desktop gap-unit w-full max-w-container-max mx-auto">
+<span class="font-headline-sm text-headline-sm text-tertiary uppercase tracking-tighter">ELITE SCOUT</span>
+<div class="flex flex-wrap justify-center gap-6 mt-4 md:mt-0 font-body-sm text-body-sm">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-100 hover:opacity-80" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-100 hover:opacity-80" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors opacity-100 hover:opacity-80" href="#">Agent Portal</a>
+</div>
+<span class="text-on-surface-variant font-body-sm text-body-sm mt-4 md:mt-0 text-center md:text-right">
+                © 2024 PROSPECT ANALYTICS. ALL RIGHTS RESERVED.
+            </span>
+</div>
+</footer>
+</body></html>

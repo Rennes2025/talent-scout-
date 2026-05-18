@@ -1,26 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Tailwind v4 : tokens via @theme ─────────────────────────────────────── */
+@theme {
+  /* Armor Elite — couleurs Stitch */
+  --color-surface:                    #0c141b;
+  --color-surface-dim:                #0c141b;
+  --color-surface-bright:             #323a42;
+  --color-surface-container-lowest:   #070f16;
+  --color-surface-container-low:      #141c23;
+  --color-surface-container:          #182028;
+  --color-surface-container-high:     #232b32;
+  --color-surface-container-highest:  #2e363d;
+  --color-on-surface:                 #dbe3ed;
+  --color-on-surface-variant:         #c4c6cf;
+  --color-outline:                    #8e9099;
+  --color-outline-variant:            #44474e;
+  --color-primary:                    #b1c7f2;
+  --color-on-primary:                 #193053;
+  --color-primary-container:          #001b3d;
+  --color-secondary:                  #c5c7c8;
+  --color-secondary-container:        #494c4d;
+  --color-tertiary:                   #e9c349;
+  --color-on-tertiary:                #3c2f00;
+  --color-tertiary-container:         #cca730;
+  --color-error:                      #ffb4ab;
+  --color-error-container:            #93000a;
+  --color-background:                 #0c141b;
+  --color-on-background:              #dbe3ed;
+  --color-surface-variant:            #2e363d;
+  --color-surface-tint:               #b1c7f2;
+
+  /* Fonts */
+  --font-oswald:     'Oswald', sans-serif;
+  --font-metropolis: 'Metropolis', 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-gutter:         24px;
+  --spacing-margin-mobile:  16px;
+  --spacing-margin-desktop: 40px;
+  --spacing-container-max:  1280px;
+
+  /* Border radius */
+  --radius-sm:   0.125rem;
+  --radius:      0.25rem;
+  --radius-lg:   0.5rem;
+  --radius-xl:   0.75rem;
+  --radius-full: 9999px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ── Base ────────────────────────────────────────────────────────────────── */
+@layer base {
+  html { color-scheme: dark; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: #0c141b;
+    color: #dbe3ed;
+    font-family: 'Metropolis', 'Inter', ui-sans-serif, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Oswald', sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Components ──────────────────────────────────────────────────────────── */
+@layer utilities {
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    line-height: 1;
+    user-select: none;
+    vertical-align: middle;
+  }
+  .material-symbols-outlined.fill {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  .glass {
+    background: rgba(24, 32, 40, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(68, 71, 78, 0.2);
+  }
+  .glass-card {
+    background: rgba(35, 43, 50, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(233, 195, 73, 0.12);
+    border-radius: 0.5rem;
+  }
+  .glass-panel {
+    background: rgba(46, 54, 61, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(219, 227, 237, 0.1);
+  }
+  .glow-gold {
+    box-shadow: 0 0 24px rgba(233, 195, 73, 0.35);
+  }
+  .scout-chip {
+    background: rgba(46, 54, 61, 0.8);
+    border: 1px solid rgba(68, 71, 78, 0.4);
+    color: #e9c349;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    backdrop-filter: blur(4px);
+  }
+  .progress-bar {
+    height: 5px;
+    border-radius: 9999px;
+    background: #2e363d;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 9999px;
+    background: #e9c349;
+    transition: width 0.5s ease;
+  }
+  .stat-card {
+    background: rgba(35, 43, 50, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(233, 195, 73, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
 }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0c141b; }
+::-webkit-scrollbar-thumb { background: #44474e; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #e9c349; }

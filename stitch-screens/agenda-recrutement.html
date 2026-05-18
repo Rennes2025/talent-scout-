@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recruitment Agenda | Elite Scout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=Metropolis:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#8e9099",
+                        "surface": "#0c141b",
+                        "on-secondary-fixed": "#191c1d",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary-fixed": "#001b3d",
+                        "primary-fixed": "#d6e3ff",
+                        "inverse-surface": "#dbe3ed",
+                        "outline-variant": "#44474e",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#495f84",
+                        "on-surface": "#dbe3ed",
+                        "on-background": "#dbe3ed",
+                        "surface-container-low": "#141c23",
+                        "on-tertiary-container": "#4f3e00",
+                        "primary-container": "#001b3d",
+                        "surface-container-lowest": "#070f16",
+                        "secondary-fixed-dim": "#c5c7c8",
+                        "tertiary": "#e9c349",
+                        "secondary": "#c5c7c8",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-error": "#690005",
+                        "primary": "#b1c7f2",
+                        "on-secondary": "#2e3132",
+                        "surface-container": "#182028",
+                        "surface-container-highest": "#2e363d",
+                        "surface-bright": "#323a42",
+                        "on-tertiary": "#3c2f00",
+                        "on-secondary-container": "#babcbd",
+                        "on-surface-variant": "#c4c6cf",
+                        "on-primary-container": "#6f84ac",
+                        "background": "#0c141b",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#e1e3e4",
+                        "on-primary": "#193053",
+                        "on-secondary-fixed-variant": "#454748",
+                        "surface-variant": "#2e363d",
+                        "inverse-on-surface": "#293139",
+                        "surface-container-high": "#232b32",
+                        "on-primary-fixed-variant": "#31476b",
+                        "tertiary-fixed": "#ffe088",
+                        "surface-tint": "#b1c7f2",
+                        "surface-dim": "#0c141b",
+                        "primary-fixed-dim": "#b1c7f2",
+                        "tertiary-container": "#cca730",
+                        "on-tertiary-fixed": "#241a00",
+                        "secondary-container": "#494c4d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "stat-value": ["Oswald"],
+                        "body-sm": ["Metropolis"],
+                        "display-lg": ["Oswald"],
+                        "headline-lg": ["Oswald"],
+                        "headline-md": ["Oswald"],
+                        "body-lg": ["Metropolis"],
+                        "body-md": ["Metropolis"],
+                        "label-caps": ["Metropolis"],
+                        "headline-sm": ["Oswald"]
+                    },
+                    "fontSize": {
+                        "stat-value": ["36px", { "lineHeight": "1", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-image: radial-gradient(circle at top right, rgba(12,20,27,1) 0%, rgba(7,15,22,1) 100%);
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(46, 54, 61, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(233, 195, 73, 0.15);
+        }
+        .glass-header {
+            background: rgba(12, 20, 27, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen font-body-md pt-16 pb-20 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md dark:bg-surface/60 border-b border-outline-variant/20 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-variant transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sports_soccer</span>
+</button>
+<h1 class="font-headline-md text-headline-md tracking-tighter text-tertiary uppercase">ELITE SCOUT</h1>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-variant transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-gutter md:py-margin-desktop">
+<!-- Hero / Header Section -->
+<div class="mb-gutter md:mb-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-unit">Recruitment Agenda</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Strategic tracking of upcoming U19 scouting events across the France and Spain territories.
+            </p>
+<!-- Filters -->
+<div class="flex flex-wrap gap-unit mt-gutter">
+<button class="bg-tertiary text-on-tertiary font-label-caps text-label-caps px-4 py-2 rounded-full border border-tertiary shadow-[0_0_15px_rgba(233,195,73,0.3)]">ALL EVENTS</button>
+<button class="bg-transparent text-on-surface font-label-caps text-label-caps px-4 py-2 rounded-full border border-outline-variant hover:bg-surface-variant transition-colors">FRANCE U19</button>
+<button class="bg-transparent text-on-surface font-label-caps text-label-caps px-4 py-2 rounded-full border border-outline-variant hover:bg-surface-variant transition-colors">SPAIN U19</button>
+</div>
+</div>
+<!-- Agenda Grid (Bento Style) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Featured Upcoming Event -->
+<div class="lg:col-span-8 glass-card rounded-xl overflow-hidden relative group">
+<div class="absolute inset-0 z-0">
+<img alt="A high-contrast, dramatic shot of a floodlit stadium pitch at night. The pristine green grass contrasts sharply with the deep, moody shadows of the stands. The lighting is cinematic, highlighting the texture of the turf, fitting a premium, high-performance scouting theme in deep ocean blue and midnight slate tones." class="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-500" data-alt="A high-contrast, dramatic shot of a floodlit stadium pitch at night. The pristine green grass contrasts sharply with the deep, moody shadows of the stands. The lighting is cinematic, highlighting the texture of the turf, fitting a premium, high-performance scouting theme in deep ocean blue and midnight slate tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAysm0cq_ef9bLG9Uy7GArUuZ2q74W3MpKQEBJ69XxEbq_LqDxCly4j1GIBjyYMimtZrlRvccH0k3xom2aHrg7CmGMt4l1ALQl_kcpjda4nBVNHWNsPa7XAeFkgpVJjrDB-eeQ2xHlV3zjaKQv7xy6_dz43Q3c0qUyPUF9xkBCbaXCoY6iMphfMWohALDqAYONavJV6VvkbMZetDChWY4tmCaaLGv2RODoSBeS80K5Ufy_E2f8juFFKdl65LPMuW8-L7vUYfjIEX5M"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent"></div>
+</div>
+<div class="relative z-10 p-gutter md:p-margin-desktop h-full flex flex-col justify-end min-h-[400px]">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-error text-on-error font-label-caps text-label-caps px-2 py-1 rounded DEFAULT">URGENT</span>
+<span class="bg-surface/80 backdrop-blur text-on-surface font-label-caps text-label-caps px-2 py-1 border border-outline-variant/30 rounded DEFAULT">SPAIN</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-tertiary mb-2 leading-tight">La Liga Promises U19 Showcase</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 border-t border-outline-variant/20 pt-6">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">DATE</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">Oct 15-18</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">LOCATION</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">Villarreal</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">TARGETS</p>
+<p class="font-headline-sm text-headline-sm text-on-surface text-tertiary">12 Identified</p>
+</div>
+<div class="flex items-end justify-end">
+<button class="bg-transparent border border-tertiary text-tertiary hover:bg-tertiary hover:text-on-tertiary transition-colors rounded-full p-3 flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Stats / Focus Areas -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<div class="glass-card rounded-xl p-gutter flex-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">radar</span>
+                        Scouting Coverage
+                    </h4>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">FRANCE REGIONS</span>
+<span class="font-stat-value text-stat-value text-on-surface text-2xl">85%</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SPAIN REGIONS</span>
+<span class="font-stat-value text-stat-value text-on-surface text-2xl">62%</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-full overflow-hidden">
+<div class="bg-outline h-full" style="width: 62%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-gutter">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Key Regions</h4>
+<span class="material-symbols-outlined text-on-surface-variant">map</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="border border-outline-variant bg-surface-container text-on-surface px-3 py-1 font-label-caps text-label-caps rounded-sm">ILE-DE-FRANCE</span>
+<span class="border border-outline-variant bg-surface-container text-on-surface px-3 py-1 font-label-caps text-label-caps rounded-sm">CATALONIA</span>
+<span class="border border-outline-variant bg-surface-container text-on-surface px-3 py-1 font-label-caps text-label-caps rounded-sm">BASQUE COUNTRY</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Schedule List -->
+<div class="mt-gutter md:mt-margin-desktop">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-gutter">Upcoming Schedule</h3>
+<div class="space-y-4">
+<!-- List Item 1 -->
+<div class="glass-card rounded-lg p-4 md:p-6 flex flex-col md:flex-row md:items-center gap-6 hover:bg-surface-variant/50 transition-colors group">
+<!-- Date Column -->
+<div class="w-24 shrink-0 text-center md:text-left md:border-r border-outline-variant/30 pr-4">
+<p class="font-stat-value text-stat-value text-on-surface group-hover:text-tertiary transition-colors">22</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">OCTOBER</p>
+</div>
+<!-- Content -->
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps">FR</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface m-0">Coupe Gambardella Qualifiers</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            Paris Metropolitan Area
+                        </p>
+</div>
+<!-- Action -->
+<div class="shrink-0 flex items-center justify-end">
+<button class="bg-transparent border border-outline-variant text-on-surface font-label-caps text-label-caps px-4 py-2 hover:border-tertiary hover:text-tertiary transition-colors">VIEW DETAILS</button>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="glass-card rounded-lg p-4 md:p-6 flex flex-col md:flex-row md:items-center gap-6 hover:bg-surface-variant/50 transition-colors group">
+<div class="w-24 shrink-0 text-center md:text-left md:border-r border-outline-variant/30 pr-4">
+<p class="font-stat-value text-stat-value text-on-surface group-hover:text-tertiary transition-colors">05</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">NOVEMBER</p>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps">ES</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface m-0">División de Honor Juvenil Derby</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            Madrid, Spain
+                        </p>
+</div>
+<div class="shrink-0 flex items-center justify-end">
+<button class="bg-transparent border border-outline-variant text-on-surface font-label-caps text-label-caps px-4 py-2 hover:border-tertiary hover:text-tertiary transition-colors">VIEW DETAILS</button>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="glass-card rounded-lg p-4 md:p-6 flex flex-col md:flex-row md:items-center gap-6 hover:bg-surface-variant/50 transition-colors group">
+<div class="w-24 shrink-0 text-center md:text-left md:border-r border-outline-variant/30 pr-4">
+<p class="font-stat-value text-stat-value text-on-surface group-hover:text-tertiary transition-colors">12</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">NOVEMBER</p>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps">FR</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface m-0">INF Clairefontaine Trial Matches</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            Clairefontaine-en-Yvelines
+                        </p>
+</div>
+<div class="shrink-0 flex items-center justify-end">
+<button class="bg-transparent border border-outline-variant text-on-surface font-label-caps text-label-caps px-4 py-2 hover:border-tertiary hover:text-tertiary transition-colors">VIEW DETAILS</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-highest/80 backdrop-blur-xl dark:bg-surface-container-highest/80 shadow-2xl flex justify-around items-center h-20 px-2 pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-caps text-[10px]">Profile</span>
+</a>
+<a class="flex flex-col items-center justify-center text-tertiary bg-surface-bright/40 rounded-full px-4 py-1 scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label-caps text-[10px]">Agenda</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface" href="#">
+<span class="material-symbols-outlined mb-1">leaderboard</span>
+<span class="font-label-caps text-[10px]">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface" href="#">
+<span class="material-symbols-outlined mb-1">play_circle</span>
+<span class="font-label-caps text-[10px]">Videos</span>
+</a>
+</nav>
+</body></html>
