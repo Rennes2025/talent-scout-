@@ -41,7 +41,7 @@ export default function ProfilJoueur() {
                 <span style={{color:'#e9c349'}}>MEKDADI</span>
               </h1>
               <p style={{color:'#c4c6cf', fontSize:'14px', marginTop:'8px', maxWidth:'480px', lineHeight:1.6}}>
-                Né le 20 juin 2008 · 1m77 · Pied gauche (ambidextre) — Talent polyvalent
+                Né le 20 juin 2008 · 1m77 · Pied gauche — Talent polyvalent
                 alliant technique, vision et explosivité sur les deux côtés du terrain.
               </p>
             </div>
@@ -108,7 +108,7 @@ export default function ProfilJoueur() {
           {[
             { icon: 'cake',          label: 'Date de naissance', val: '20 juin 2008' },
             { icon: 'straighten',    label: 'Taille',             val: '1m77' },
-            { icon: 'sports_soccer', label: 'Pied fort',          val: 'Gauche (ambidextre)' },
+            { icon: 'sports_soccer', label: 'Pied fort',          val: 'Gauche' },
             { icon: 'swap_horiz',    label: 'Polyvalence',        val: 'Milieu · Ailier · Latéral' },
           ].map((item) => (
             <div key={item.label} className="glass-card p-4 flex flex-col gap-1">
