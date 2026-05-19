@@ -33,6 +33,7 @@ interface Event {
   type: string;
   importance: string;
   tags: string | null;
+  website?: string;
 }
 
 // ─── Config maps ──────────────────────────────────────────────────────────────
@@ -207,6 +208,24 @@ function EventCard({ event }: { event: Event }) {
           ))}
         </div>
       )}
+
+      {/* Lien officiel */}
+      {event.website && (
+        <a
+          href={event.website}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 w-full mt-1 py-2 rounded font-label-caps text-label-caps text-xs uppercase transition-all"
+          style={{
+            background: "rgba(233,195,73,0.1)",
+            border: "1px solid rgba(233,195,73,0.4)",
+            color: "#e9c349",
+          }}
+        >
+          <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+          Site officiel · S&apos;inscrire
+        </a>
+      )}
     </div>
   );
 }
@@ -225,6 +244,7 @@ const STATIC_EVENTS: Event[] = [
     type: "TOURNOI",
     importance: "CRITIQUE",
     tags: JSON.stringify(["U17", "International", "Scouts UEFA"]),
+    website: "https://www.gothiacup.se",
   },
   {
     id: "2",
@@ -237,6 +257,7 @@ const STATIC_EVENTS: Event[] = [
     type: "TOURNOI",
     importance: "CRITIQUE",
     tags: JSON.stringify(["U17", "U18", "Détection", "Ligue 1"]),
+    website: "https://www.parisworldgames.com",
   },
   {
     id: "3",
@@ -249,6 +270,7 @@ const STATIC_EVENTS: Event[] = [
     type: "DÉTECTION",
     importance: "CRITIQUE",
     tags: JSON.stringify(["U17", "Centres formation", "Nike"]),
+    website: "https://www.nike.com/fr/football",
   },
   {
     id: "4",
@@ -261,6 +283,7 @@ const STATIC_EVENTS: Event[] = [
     type: "TOURNOI",
     importance: "IMPORTANT",
     tags: JSON.stringify(["U17", "International", "Scouts PL"]),
+    website: "https://www.danacup.com",
   },
   {
     id: "5",
@@ -273,6 +296,7 @@ const STATIC_EVENTS: Event[] = [
     type: "DÉTECTION",
     importance: "CRITIQUE",
     tags: JSON.stringify(["U17", "LFP", "Clairefontaine", "Pro"]),
+    website: "https://www.lfp.fr",
   },
   {
     id: "6",
@@ -285,6 +309,7 @@ const STATIC_EVENTS: Event[] = [
     type: "TOURNOI",
     importance: "IMPORTANT",
     tags: JSON.stringify(["U17", "Espagne", "La Liga scouts"]),
+    website: "https://www.micfootball.com",
   },
   {
     id: "7",
@@ -297,6 +322,7 @@ const STATIC_EVENTS: Event[] = [
     type: "TOURNOI",
     importance: "CRITIQUE",
     tags: JSON.stringify(["U16", "U17", "Sélections nationales"]),
+    website: "https://www.tournoide montaigu.com",
   },
   {
     id: "8",
@@ -309,6 +335,7 @@ const STATIC_EVENTS: Event[] = [
     type: "TOURNOI",
     importance: "NORMAL",
     tags: JSON.stringify(["U17", "Bretagne", "Rennes", "Brest"]),
+    website: "https://www.fff.fr",
   },
   {
     id: "9",
@@ -321,6 +348,7 @@ const STATIC_EVENTS: Event[] = [
     type: "TOURNOI",
     importance: "IMPORTANT",
     tags: JSON.stringify(["U17", "Stade Brestois", "Région Bretagne"]),
+    website: "https://www.stade-brestois.com",
   },
   {
     id: "10",
@@ -333,6 +361,7 @@ const STATIC_EVENTS: Event[] = [
     type: "DÉTECTION",
     importance: "IMPORTANT",
     tags: JSON.stringify(["U17", "U18", "Espoirs", "National"]),
+    website: "https://www.fff.fr",
   },
   {
     id: "11",
@@ -345,6 +374,7 @@ const STATIC_EVENTS: Event[] = [
     type: "DÉTECTION",
     importance: "CRITIQUE",
     tags: JSON.stringify(["U17", "Maroc", "FRMF", "Sélection nationale"]),
+    website: "https://www.frmf.ma",
   },
   {
     id: "12",
@@ -357,6 +387,7 @@ const STATIC_EVENTS: Event[] = [
     type: "TOURNOI",
     importance: "IMPORTANT",
     tags: JSON.stringify(["U17", "Stade Rennais", "Détection hivernale"]),
+    website: "https://www.staderennais.com",
   },
 ];
 
