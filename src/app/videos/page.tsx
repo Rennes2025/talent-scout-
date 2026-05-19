@@ -3,19 +3,19 @@
 import { useState } from "react";
 
 const videos = [
-  { id: 1,  src: "/videos/video-01.mp4",  tag: "MATCH",        label: "Action en match",          cover: "/player-action-1.jpg" },
-  { id: 2,  src: "/videos/video-02.mp4",  tag: "ENTRAÎNEMENT", label: "Technique individuelle",    cover: "/player-training-dribble.jpg" },
-  { id: 3,  src: "/videos/video-03.mp4",  tag: "ENTRAÎNEMENT", label: "Dribble & contrôle",        cover: "/player-training-ball.jpg" },
-  { id: 4,  src: "/videos/video-04.mp4",  tag: "ENTRAÎNEMENT", label: "Séance collective",         cover: "/player-training-team.jpg" },
-  { id: 5,  src: "/videos/video-05.mp4",  tag: "MATCH",        label: "Action de jeu",             cover: "/player-action-2.jpg" },
-  { id: 6,  src: "/videos/video-06.mp4",  tag: "ENTRAÎNEMENT", label: "Explosivité & vitesse",     cover: "/player-training-dribble.jpg" },
-  { id: 7,  src: "/videos/video-07.mp4",  tag: "MATCH",        label: "Prise de balle",            cover: "/player-action-1.jpg" },
-  { id: 8,  src: "/videos/video-08.mp4",  tag: "ENTRAÎNEMENT", label: "Passes & vision",           cover: "/player-training-ball.jpg" },
-  { id: 9,  src: "/videos/video-09.mp4",  tag: "COMPÉTITION",  label: "CAN Rennes U15",            cover: "/player-can-rennes.jpg" },
-  { id: 10, src: "/videos/video-10.mp4",  tag: "MATCH",        label: "Tournoi mai 2026",          cover: "/player-tournament-may.jpg" },
-  { id: 11, src: "/videos/video-11.mp4",  tag: "MATCH",        label: "Match mai 2026 — Phase 1",  cover: "/player-match-may.jpg" },
-  { id: 12, src: "/videos/video-12.mp4",  tag: "MATCH",        label: "Match mai 2026 — Phase 2",  cover: "/player-bench.jpg" },
-  { id: 13, src: "/videos/video-13.mp4",  tag: "ENTRAÎNEMENT", label: "Préparation physique",      cover: "/player-training-team.jpg" },
+  { id: 1,  youtubeId: "sp3M9LrNopQ",  tag: "MATCH",        label: "Action en match",          cover: "/player-action-1.jpg" },
+  { id: 2,  youtubeId: "ZoOkjwm7w9I",  tag: "ENTRAÎNEMENT", label: "Technique individuelle",    cover: "/player-training-dribble.jpg" },
+  { id: 3,  youtubeId: "UlT45iZTPHc",  tag: "ENTRAÎNEMENT", label: "Dribble & contrôle",        cover: "/player-training-ball.jpg" },
+  { id: 4,  youtubeId: "",             tag: "ENTRAÎNEMENT", label: "Séance collective",         cover: "/player-training-team.jpg" },
+  { id: 5,  youtubeId: "",             tag: "MATCH",        label: "Action de jeu",             cover: "/player-action-2.jpg" },
+  { id: 6,  youtubeId: "",             tag: "ENTRAÎNEMENT", label: "Explosivité & vitesse",     cover: "/player-training-dribble.jpg" },
+  { id: 7,  youtubeId: "",             tag: "MATCH",        label: "Prise de balle",            cover: "/player-action-1.jpg" },
+  { id: 8,  youtubeId: "",             tag: "ENTRAÎNEMENT", label: "Passes & vision",           cover: "/player-training-ball.jpg" },
+  { id: 9,  youtubeId: "",             tag: "COMPÉTITION",  label: "CAN Rennes U15",            cover: "/player-can-rennes.jpg" },
+  { id: 10, youtubeId: "",             tag: "MATCH",        label: "Tournoi mai 2026",          cover: "/player-tournament-may.jpg" },
+  { id: 11, youtubeId: "",             tag: "MATCH",        label: "Match mai 2026 — Phase 1",  cover: "/player-match-may.jpg" },
+  { id: 12, youtubeId: "",             tag: "MATCH",        label: "Match mai 2026 — Phase 2",  cover: "/player-bench.jpg" },
+  { id: 13, youtubeId: "",             tag: "ENTRAÎNEMENT", label: "Préparation physique",      cover: "/player-training-team.jpg" },
 ];
 
 const tagColor: Record<string, string> = {
@@ -29,6 +29,10 @@ const filterOptions = ["TOUT", "MATCH", "ENTRAÎNEMENT", "COMPÉTITION"];
 export default function VideosPage() {
   const [activeFilter, setActiveFilter] = useState("TOUT");
   const [playing, setPlaying] = useState<(typeof videos)[0] | null>(null);
+
+  const handlePlay = (video: (typeof videos)[0]) => {
+    if (video.youtubeId) setPlaying(video);
+  };
 
   const filtered = videos.filter(
     (v) => activeFilter === "TOUT" || v.tag === activeFilter
@@ -81,8 +85,8 @@ export default function VideosPage() {
           {filtered.map((video) => (
             <article
               key={video.id}
-              onClick={() => setPlaying(video)}
-              className="group relative rounded-xl overflow-hidden cursor-pointer"
+              onClick={() => handlePlay(video)}
+              className={`group relative rounded-xl overflow-hidden ${video.youtubeId ? "cursor-pointer" : "cursor-not-allowed opacity-50"}`}
               style={{
                 aspectRatio: "16/9",
                 background: "#182028",
@@ -178,15 +182,15 @@ export default function VideosPage() {
               </button>
             </div>
 
-            {/* Player */}
-            <video
-              src={playing.src}
-              controls
-              autoPlay
-              playsInline
-              className="w-full"
-              style={{ background: "#0c141b", maxHeight: "70vh" }}
-            />
+            {/* Player YouTube */}
+            <div style={{ position: "relative", paddingBottom: "56.25%", background: "#0c141b" }}>
+              <iframe
+                src={`https://www.youtube.com/embed/${playing.youtubeId}?autoplay=1&rel=0`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
+              />
+            </div>
           </div>
         </div>
       )}
