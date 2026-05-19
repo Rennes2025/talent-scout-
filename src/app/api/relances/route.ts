@@ -3,12 +3,16 @@ import { prisma } from "@/lib/prisma";
 
 // GET /api/relances — relances en attente (done=false)
 export async function GET() {
-  const relances = await prisma.relance.findMany({
-    where:   { done: false },
-    include: { club: { select: { name: true, logo: true, country: true } } },
-    orderBy: { dueDate: "asc" },
-  });
-  return NextResponse.json(relances);
+  try {
+    const relances = await prisma.relance.findMany({
+      where:   { done: false },
+      include: { club: { select: { name: true, logo: true, country: true } } },
+      orderBy: { dueDate: "asc" },
+    });
+    return NextResponse.json(relances);
+  } catch {
+    return NextResponse.json([]);
+  }
 }
 
 // POST /api/relances — créer une relance

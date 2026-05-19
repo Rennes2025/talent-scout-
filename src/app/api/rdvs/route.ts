@@ -3,11 +3,15 @@ import { prisma } from "@/lib/prisma";
 
 // GET /api/rdvs — tous les RDV à venir
 export async function GET() {
-  const rdvs = await prisma.rdv.findMany({
-    include: { club: { select: { name: true, logo: true, country: true } } },
-    orderBy: { date: "asc" },
-  });
-  return NextResponse.json(rdvs);
+  try {
+    const rdvs = await prisma.rdv.findMany({
+      include: { club: { select: { name: true, logo: true, country: true } } },
+      orderBy: { date: "asc" },
+    });
+    return NextResponse.json(rdvs);
+  } catch {
+    return NextResponse.json([]);
+  }
 }
 
 // POST /api/rdvs — créer un RDV
