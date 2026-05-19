@@ -1,11 +1,27 @@
+"use client";
+import { useMemo } from "react";
+
+const HERO_IMAGES = [
+  "/hero-bg.jpg",
+  "/hero1-bg.jpg",
+  "/hero2-bg.jpg",
+  "/hero3-bg.jpg",
+];
+
 export default function ProfilJoueur() {
+  // Choisit une image aléatoire au chargement de la page
+  const heroBg = useMemo(
+    () => HERO_IMAGES[Math.floor(Math.random() * HERO_IMAGES.length)],
+    []
+  );
+
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section
         className="relative w-full min-h-[480px] flex items-end pb-8 px-4 md:px-10"
         style={{
-          backgroundImage: "url('/player-training-ball.jpg')",
+          backgroundImage: `url('${heroBg}')`,
           backgroundSize: "cover",
           backgroundPosition: "center 30%",
         }}
