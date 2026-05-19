@@ -1,5 +1,5 @@
 "use client";
-import { useMemo } from "react";
+import { useState, useEffect } from "react";
 
 const HERO_IMAGES = [
   "/hero-bg.jpg",
@@ -9,11 +9,11 @@ const HERO_IMAGES = [
 ];
 
 export default function ProfilJoueur() {
-  // Choisit une image aléatoire au chargement de la page
-  const heroBg = useMemo(
-    () => HERO_IMAGES[Math.floor(Math.random() * HERO_IMAGES.length)],
-    []
-  );
+  const [heroBg, setHeroBg] = useState(HERO_IMAGES[0]);
+
+  useEffect(() => {
+    setHeroBg(HERO_IMAGES[Math.floor(Math.random() * HERO_IMAGES.length)]);
+  }, []);
 
   return (
     <>
