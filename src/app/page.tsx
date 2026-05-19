@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ProfilJoueur() {
   const heroBg = "/hero2-bg.jpg";
 
@@ -65,7 +67,7 @@ export default function ProfilJoueur() {
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-3 mt-1">
-            <a href="/contact" style={{
+            <Link href="/contact" style={{
               background:'#e9c349', color:'#0c141b',
               fontFamily:'Oswald,sans-serif', fontSize:'13px', fontWeight:700,
               letterSpacing:'0.1em', textTransform:'uppercase',
@@ -75,8 +77,8 @@ export default function ProfilJoueur() {
             }}>
               <span className="material-symbols-outlined" style={{fontSize:'17px'}}>mail</span>
               Contacter l&apos;agent
-            </a>
-            <a href="/videos" style={{
+            </Link>
+            <Link href="/videos" style={{
               background:'transparent', color:'#dbe3ed',
               fontFamily:'Oswald,sans-serif', fontSize:'13px', fontWeight:700,
               letterSpacing:'0.1em', textTransform:'uppercase',
@@ -87,8 +89,8 @@ export default function ProfilJoueur() {
             }}>
               <span className="material-symbols-outlined" style={{fontSize:'17px'}}>play_circle</span>
               Voir les vidéos
-            </a>
-            <a href="/stats" style={{
+            </Link>
+            <Link href="/stats" style={{
               background:'transparent', color:'#e9c349',
               fontFamily:'Oswald,sans-serif', fontSize:'13px', fontWeight:700,
               letterSpacing:'0.1em', textTransform:'uppercase',
@@ -99,7 +101,7 @@ export default function ProfilJoueur() {
             }}>
               <span className="material-symbols-outlined" style={{fontSize:'17px'}}>bar_chart</span>
               Stats complètes
-            </a>
+            </Link>
           </div>
         </div>
       </section>
