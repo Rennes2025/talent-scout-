@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLang } from "@/contexts/LanguageContext";
 
 const videos = [
   { id: 1,  youtubeId: "sp3M9LrNopQ",  tag: "MATCH",        label: "Action en match",          cover: "/player-action-1.jpg" },
@@ -27,7 +28,15 @@ const tagColor: Record<string, string> = {
 const filterOptions = ["TOUT", "MATCH", "ENTRAÎNEMENT", "COMPÉTITION"];
 
 export default function VideosPage() {
-  const [activeFilter, setActiveFilter] = useState("TOUT");
+  const { t } = useLang();
+  const filterOptions = [t.videos.filterAll, t.videos.filterMatch, t.videos.filterTraining, t.videos.filterComp];
+  const tagMap: Record<string, string> = {
+    "MATCH": t.videos.filterMatch,
+    "ENTRAÎNEMENT": t.videos.filterTraining,
+    "COMPÉTITION": t.videos.filterComp,
+  };
+
+  const [activeFilter, setActiveFilter] = useState(t.videos.filterAll);
   const [playing, setPlaying] = useState<(typeof videos)[0] | null>(null);
 
   const handlePlay = (video: (typeof videos)[0]) => {
@@ -35,7 +44,7 @@ export default function VideosPage() {
   };
 
   const filtered = videos.filter(
-    (v) => activeFilter === "TOUT" || v.tag === activeFilter
+    (v) => activeFilter === t.videos.filterAll || tagMap[v.tag] === activeFilter
   );
 
   return (
@@ -50,11 +59,11 @@ export default function VideosPage() {
               <span className="material-symbols-outlined" style={{ color: "#e9c349" }}>play_circle</span>
               <h2 style={{ fontFamily: "Oswald,sans-serif", fontSize: "22px", fontWeight: 700,
                 textTransform: "uppercase", color: "#dbe3ed", letterSpacing: "-0.01em" }}>
-                Vidéos &amp; Actions
+                {t.videos.title}
               </h2>
             </div>
             <p style={{ color: "#8e9099", fontSize: "13px" }}>
-              {videos.length} vidéos · Matchs, entraînements et compétitions — Anwar MEKDADI
+              {videos.length} {t.videos.subtitle} — Anwar MEKDADI
             </p>
           </div>
 

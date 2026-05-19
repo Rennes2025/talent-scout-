@@ -1,6 +1,9 @@
 "use client";
 
+import { useLang } from "@/contexts/LanguageContext";
+
 export default function StatsPage() {
+  const { t } = useLang();
   const handleExportPDF = () => {
     window.print();
   };
@@ -19,10 +22,10 @@ export default function StatsPage() {
           <div className="flex flex-col md:flex-row justify-between items-end gap-unit mb-unit">
             <div>
               <h1 className="font-display-lg text-display-lg text-on-surface uppercase tracking-tight">
-                PLAYER DATABASE
+                {t.stats.title}
               </h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant">
-                Comprehensive analytical breakdown and historical performance metrics.
+                {t.stats.subtitle}
               </p>
             </div>
             <div className="flex gap-unit">
@@ -30,10 +33,10 @@ export default function StatsPage() {
                 onClick={handleExportPDF}
                 className="bg-transparent border border-outline-variant/50 text-on-surface font-label-caps text-label-caps px-4 py-2 rounded uppercase hover:border-tertiary transition-colors"
               >
-                Export PDF
+                {t.stats.exportPdf}
               </button>
               <button className="bg-tertiary text-on-tertiary font-label-caps text-label-caps px-4 py-2 rounded uppercase font-bold hover:bg-tertiary-fixed transition-colors">
-                Compare Stats
+                {t.stats.compareStats}
               </button>
             </div>
           </div>
@@ -44,7 +47,7 @@ export default function StatsPage() {
             <div className="md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-unit">
               <div className="glass-panel rounded-lg p-unit flex flex-col justify-between h-32 relative overflow-hidden">
                 <span className="font-label-caps text-label-caps text-on-surface-variant uppercase z-10">
-                  Matches Played
+                  {t.stats.matchesPlayed}
                 </span>
                 <span className="font-stat-value text-stat-value text-tertiary z-10">142</span>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-surface-container-high">
@@ -53,7 +56,7 @@ export default function StatsPage() {
               </div>
               <div className="glass-panel rounded-lg p-unit flex flex-col justify-between h-32 relative overflow-hidden">
                 <span className="font-label-caps text-label-caps text-on-surface-variant uppercase z-10">
-                  Goals/Assists
+                  {t.stats.goalsAssists}
                 </span>
                 <span className="font-stat-value text-stat-value text-on-surface z-10">84</span>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-surface-container-high">
@@ -62,7 +65,7 @@ export default function StatsPage() {
               </div>
               <div className="glass-panel rounded-lg p-unit flex flex-col justify-between h-32 relative overflow-hidden">
                 <span className="font-label-caps text-label-caps text-on-surface-variant uppercase z-10">
-                  Pass Accuracy
+                  {t.stats.passAccuracy}
                 </span>
                 <span className="font-stat-value text-stat-value text-on-surface z-10">89%</span>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-surface-container-high">
@@ -71,7 +74,7 @@ export default function StatsPage() {
               </div>
               <div className="glass-panel rounded-lg p-unit flex flex-col justify-between h-32 relative overflow-hidden">
                 <span className="font-label-caps text-label-caps text-on-surface-variant uppercase z-10">
-                  Top Speed
+                  {t.stats.topSpeed}
                 </span>
                 <span className="font-stat-value text-stat-value text-tertiary z-10">
                   34.2<span className="text-body-sm">km/h</span>
@@ -87,7 +90,7 @@ export default function StatsPage() {
               <div className="glass-panel rounded-xl p-gutter h-full">
                 <div className="flex justify-between items-center mb-unit border-b border-outline-variant/20 pb-2">
                   <h2 className="font-headline-sm text-headline-sm text-on-surface uppercase">
-                    Technical Attributes
+                    {t.stats.technicalAttributes}
                   </h2>
                   <span className="material-symbols-outlined text-tertiary">radar</span>
                 </div>
@@ -116,31 +119,19 @@ export default function StatsPage() {
                         style={{ strokeWidth: "1.5" }}
                       ></polygon>
                     </svg>
-                    <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full font-label-caps text-[10px] text-on-surface-variant uppercase">
-                      Pace
-                    </span>
-                    <span className="absolute top-1/4 right-0 translate-x-1/2 font-label-caps text-[10px] text-on-surface-variant uppercase">
-                      Shooting
-                    </span>
-                    <span className="absolute bottom-1/4 right-0 translate-x-1/2 font-label-caps text-[10px] text-on-surface-variant uppercase">
-                      Passing
-                    </span>
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full font-label-caps text-[10px] text-on-surface-variant uppercase">
-                      Dribbling
-                    </span>
-                    <span className="absolute bottom-1/4 left-0 -translate-x-1/2 font-label-caps text-[10px] text-on-surface-variant uppercase">
-                      Defending
-                    </span>
-                    <span className="absolute top-1/4 left-0 -translate-x-1/2 font-label-caps text-[10px] text-on-surface-variant uppercase">
-                      Physical
-                    </span>
+                    <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full font-label-caps text-[10px] text-on-surface-variant uppercase">{t.stats.pace}</span>
+                    <span className="absolute top-1/4 right-0 translate-x-1/2 font-label-caps text-[10px] text-on-surface-variant uppercase">{t.stats.shooting}</span>
+                    <span className="absolute bottom-1/4 right-0 translate-x-1/2 font-label-caps text-[10px] text-on-surface-variant uppercase">{t.stats.passing}</span>
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full font-label-caps text-[10px] text-on-surface-variant uppercase">{t.stats.dribbling}</span>
+                    <span className="absolute bottom-1/4 left-0 -translate-x-1/2 font-label-caps text-[10px] text-on-surface-variant uppercase">{t.stats.defending}</span>
+                    <span className="absolute top-1/4 left-0 -translate-x-1/2 font-label-caps text-[10px] text-on-surface-variant uppercase">{t.stats.physical}</span>
                   </div>
                   <div className="flex-grow flex flex-col gap-2 w-full">
                     {[
-                      { label: "Vision", value: 92, color: "bg-tertiary", textColor: "text-tertiary" },
-                      { label: "Ball Control", value: 88, color: "bg-tertiary", textColor: "text-tertiary" },
-                      { label: "Finishing", value: 84, color: "bg-primary", textColor: "text-primary" },
-                      { label: "Stamina", value: 95, color: "bg-primary", textColor: "text-primary" },
+                      { label: t.stats.vision,      value: 92, color: "bg-tertiary", textColor: "text-tertiary" },
+                      { label: t.stats.ballControl, value: 88, color: "bg-tertiary", textColor: "text-tertiary" },
+                      { label: t.stats.finishing,   value: 84, color: "bg-primary",  textColor: "text-primary" },
+                      { label: t.stats.stamina,     value: 95, color: "bg-primary",  textColor: "text-primary" },
                     ].map((attr) => (
                       <div key={attr.label} className="flex flex-col">
                         <div className="flex justify-between font-label-caps text-label-caps mb-1">
@@ -165,7 +156,7 @@ export default function StatsPage() {
               <div className="glass-panel rounded-xl p-gutter h-full flex flex-col">
                 <div className="flex justify-between items-center mb-unit border-b border-outline-variant/20 pb-2">
                   <h2 className="font-headline-sm text-headline-sm text-on-surface uppercase">
-                    Influence Zones
+                    {t.stats.influenceZones}
                   </h2>
                   <span className="material-symbols-outlined text-tertiary">map</span>
                 </div>
@@ -194,24 +185,24 @@ export default function StatsPage() {
               <div className="glass-panel rounded-xl overflow-hidden">
                 <div className="p-unit border-b border-outline-variant/20 flex justify-between items-center bg-surface-container/50">
                   <h2 className="font-headline-sm text-headline-sm text-on-surface uppercase px-2">
-                    Recent Match History
+                    {t.stats.recentHistory}
                   </h2>
                   <button className="text-tertiary font-label-caps text-label-caps uppercase hover:underline">
-                    View Full Log
+                    {t.stats.viewFullLog}
                   </button>
                 </div>
                 <div className="w-full overflow-x-auto">
                   <table className="w-full text-left border-collapse">
                     <thead>
                       <tr className="border-b border-outline-variant/30 bg-surface-container-low font-label-caps text-label-caps text-on-surface-variant uppercase">
-                        <th className="p-unit pl-4">Date</th>
-                        <th className="p-unit">Opponent</th>
-                        <th className="p-unit text-center">Result</th>
-                        <th className="p-unit text-center">Mins</th>
+                        <th className="p-unit pl-4">{t.stats.date}</th>
+                        <th className="p-unit">{t.stats.opponent}</th>
+                        <th className="p-unit text-center">{t.stats.result}</th>
+                        <th className="p-unit text-center">{t.stats.mins}</th>
                         <th className="p-unit text-center">G</th>
                         <th className="p-unit text-center">A</th>
                         <th className="p-unit text-center">xG</th>
-                        <th className="p-unit text-center">Rating</th>
+                        <th className="p-unit text-center">{t.stats.rating}</th>
                       </tr>
                     </thead>
                     <tbody className="font-body-sm text-body-sm">
