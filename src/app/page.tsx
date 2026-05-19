@@ -1,19 +1,5 @@
-"use client";
-import { useState, useEffect } from "react";
-
-const HERO_IMAGES = [
-  "/hero-bg.jpg",
-  "/hero1-bg.jpg",
-  "/hero2-bg.jpg",
-  "/hero3-bg.jpg",
-];
-
 export default function ProfilJoueur() {
-  const [heroBg, setHeroBg] = useState(HERO_IMAGES[0]);
-
-  useEffect(() => {
-    setHeroBg(HERO_IMAGES[Math.floor(Math.random() * HERO_IMAGES.length)]);
-  }, []);
+  const heroBg = "/hero2-bg.jpg";
 
   return (
     <>
