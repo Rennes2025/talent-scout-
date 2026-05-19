@@ -36,7 +36,7 @@ export default function VideosPage() {
     "COMPÉTITION": t.videos.filterComp,
   };
 
-  const [activeFilter, setActiveFilter] = useState(t.videos.filterAll);
+  const [activeFilter, setActiveFilter] = useState<string>(t.videos.filterAll);
   const [playing, setPlaying] = useState<(typeof videos)[0] | null>(null);
 
   const handlePlay = (video: (typeof videos)[0]) => {
