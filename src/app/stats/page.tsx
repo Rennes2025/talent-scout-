@@ -1,4 +1,10 @@
+"use client";
+
 export default function StatsPage() {
+  const handleExportPDF = () => {
+    window.print();
+  };
+
   return (
     <>
       <div
@@ -20,7 +26,10 @@ export default function StatsPage() {
               </p>
             </div>
             <div className="flex gap-unit">
-              <button className="bg-transparent border border-outline-variant/50 text-on-surface font-label-caps text-label-caps px-4 py-2 rounded uppercase hover:border-tertiary transition-colors">
+              <button
+                onClick={handleExportPDF}
+                className="bg-transparent border border-outline-variant/50 text-on-surface font-label-caps text-label-caps px-4 py-2 rounded uppercase hover:border-tertiary transition-colors"
+              >
                 Export PDF
               </button>
               <button className="bg-tertiary text-on-tertiary font-label-caps text-label-caps px-4 py-2 rounded uppercase font-bold hover:bg-tertiary-fixed transition-colors">
