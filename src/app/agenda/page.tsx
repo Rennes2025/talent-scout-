@@ -211,54 +211,165 @@ function EventCard({ event }: { event: Event }) {
   );
 }
 
+// ─── Données statiques — Compétitions de recrutement 2026 ────────────────────
+
+const STATIC_EVENTS: Event[] = [
+  {
+    id: "1",
+    title: "Gothia Cup 2026",
+    description: "Le plus grand tournoi de football jeunes au monde. Catégorie U17.",
+    startDate: "2026-07-12",
+    endDate: "2026-07-18",
+    location: "Göteborg",
+    country: "Suède 🇸🇪",
+    type: "TOURNOI",
+    importance: "CRITIQUE",
+    tags: JSON.stringify(["U17", "International", "Scouts UEFA"]),
+  },
+  {
+    id: "2",
+    title: "Paris World Games 2026",
+    description: "Tournoi international de détection — présence de scouts de Ligue 1 et Bundesliga.",
+    startDate: "2026-06-28",
+    endDate: "2026-07-04",
+    location: "Paris",
+    country: "France 🇫🇷",
+    type: "TOURNOI",
+    importance: "CRITIQUE",
+    tags: JSON.stringify(["U17", "U18", "Détection", "Ligue 1"]),
+  },
+  {
+    id: "3",
+    title: "Nike Premier Cup France",
+    description: "Compétition de référence pour les centres de formation — U17/U18.",
+    startDate: "2026-06-14",
+    endDate: "2026-06-16",
+    location: "Lyon",
+    country: "France 🇫🇷",
+    type: "DÉTECTION",
+    importance: "CRITIQUE",
+    tags: JSON.stringify(["U17", "Centres formation", "Nike"]),
+  },
+  {
+    id: "4",
+    title: "Dana Cup 2026",
+    description: "Tournoi international Scandinavie — forte présence de recruteurs nordiques et britanniques.",
+    startDate: "2026-07-21",
+    endDate: "2026-07-26",
+    location: "Hjørring",
+    country: "Danemark 🇩🇰",
+    type: "TOURNOI",
+    importance: "IMPORTANT",
+    tags: JSON.stringify(["U17", "International", "Scouts PL"]),
+  },
+  {
+    id: "5",
+    title: "Détection LFP — Centres de Formation Ligue 1",
+    description: "Session officielle de détection des centres de formation professionnels français pour U17.",
+    startDate: "2026-06-08",
+    endDate: "2026-06-10",
+    location: "Clairefontaine",
+    country: "France 🇫🇷",
+    type: "DÉTECTION",
+    importance: "CRITIQUE",
+    tags: JSON.stringify(["U17", "LFP", "Clairefontaine", "Pro"]),
+  },
+  {
+    id: "6",
+    title: "MIC Football (Mediterranean Int. Cup)",
+    description: "Tournoi de référence en Espagne — clubs espagnols, italiens et français présents.",
+    startDate: "2027-03-28",
+    endDate: "2027-04-01",
+    location: "Costa Brava",
+    country: "Espagne 🇪🇸",
+    type: "TOURNOI",
+    importance: "IMPORTANT",
+    tags: JSON.stringify(["U17", "Espagne", "La Liga scouts"]),
+  },
+  {
+    id: "7",
+    title: "Tournoi de Montaigu 2027",
+    description: "Tournoi de référence en France pour les sélections nationales U16/U17.",
+    startDate: "2027-04-12",
+    endDate: "2027-04-16",
+    location: "Montaigu",
+    country: "France 🇫🇷",
+    type: "TOURNOI",
+    importance: "CRITIQUE",
+    tags: JSON.stringify(["U16", "U17", "Sélections nationales"]),
+  },
+  {
+    id: "8",
+    title: "Cap'Armor Youth Cup",
+    description: "Tournoi régional Bretagne — excellent pour visibilité auprès des clubs bretons (Rennes, Brest).",
+    startDate: "2026-08-22",
+    endDate: "2026-08-24",
+    location: "Saint-Brieuc",
+    country: "France 🇫🇷",
+    type: "TOURNOI",
+    importance: "NORMAL",
+    tags: JSON.stringify(["U17", "Bretagne", "Rennes", "Brest"]),
+  },
+  {
+    id: "9",
+    title: "Brest International Tournament",
+    description: "Tournoi estival organisé par le Stade Brestois — présence de recruteurs régionaux.",
+    startDate: "2026-08-01",
+    endDate: "2026-08-03",
+    location: "Brest",
+    country: "France 🇫🇷",
+    type: "TOURNOI",
+    importance: "IMPORTANT",
+    tags: JSON.stringify(["U17", "Stade Brestois", "Région Bretagne"]),
+  },
+  {
+    id: "10",
+    title: "Tournoi de l'Avenir — Espoirs",
+    description: "Compétition nationale espoirs — suivi par les cellules de recrutement Ligue 1 et Ligue 2.",
+    startDate: "2026-09-05",
+    endDate: "2026-09-07",
+    location: "Bordeaux",
+    country: "France 🇫🇷",
+    type: "DÉTECTION",
+    importance: "IMPORTANT",
+    tags: JSON.stringify(["U17", "U18", "Espoirs", "National"]),
+  },
+  {
+    id: "11",
+    title: "Détection Maroc — FRMF U17",
+    description: "Stage de détection officiel de la Fédération Royale Marocaine — sélection U17 nationale.",
+    startDate: "2026-07-06",
+    endDate: "2026-07-10",
+    location: "Salé",
+    country: "Maroc 🇲🇦",
+    type: "DÉTECTION",
+    importance: "CRITIQUE",
+    tags: JSON.stringify(["U17", "Maroc", "FRMF", "Sélection nationale"]),
+  },
+  {
+    id: "12",
+    title: "Winter Cup Rennes 2027",
+    description: "Tournoi hivernal organisé par le Stade Rennais — format rapide, idéal pour la visibilité.",
+    startDate: "2027-01-10",
+    endDate: "2027-01-12",
+    location: "Rennes",
+    country: "France 🇫🇷",
+    type: "TOURNOI",
+    importance: "IMPORTANT",
+    tags: JSON.stringify(["U17", "Stade Rennais", "Détection hivernale"]),
+  },
+];
+
 // ─── Main Page ─────────────────────────────────────────────────────────────────
 
 export default function AgendaPage() {
-  const [rdvs, setRdvs] = useState<Rdv[]>([]);
-  const [events, setEvents] = useState<Event[]>([]);
-  const [loadingRdvs, setLoadingRdvs] = useState(true);
-  const [loadingEvents, setLoadingEvents] = useState(true);
-  const [errorRdvs, setErrorRdvs] = useState<string | null>(null);
-  const [errorEvents, setErrorEvents] = useState<string | null>(null);
+  const [rdvs] = useState<Rdv[]>([]);
+  const [events] = useState<Event[]>(STATIC_EVENTS);
+  const [loadingRdvs] = useState(false);
+  const [loadingEvents] = useState(false);
+  const [errorRdvs] = useState<string | null>(null);
+  const [errorEvents] = useState<string | null>(null);
   const [eventFilter, setEventFilter] = useState<EventFilter>("TOUS");
-
-  // Fetch RDVs
-  useEffect(() => {
-    async function fetchRdvs() {
-      setLoadingRdvs(true);
-      try {
-        const res = await fetch("/api/rdvs");
-        if (!res.ok) throw new Error("Erreur lors du chargement des RDV");
-        const data: Rdv[] = await res.json();
-        // Sort ascending by date
-        data.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-        setRdvs(data);
-      } catch (err) {
-        setErrorRdvs(err instanceof Error ? err.message : "Erreur inconnue");
-      } finally {
-        setLoadingRdvs(false);
-      }
-    }
-    fetchRdvs();
-  }, []);
-
-  // Fetch Events
-  useEffect(() => {
-    async function fetchEvents() {
-      setLoadingEvents(true);
-      try {
-        const res = await fetch("/api/events");
-        if (!res.ok) throw new Error("Erreur lors du chargement des événements");
-        const data: Event[] = await res.json();
-        setEvents(data);
-      } catch (err) {
-        setErrorEvents(err instanceof Error ? err.message : "Erreur inconnue");
-      } finally {
-        setLoadingEvents(false);
-      }
-    }
-    fetchEvents();
-  }, []);
 
   const filteredEvents =
     eventFilter === "TOUS"
