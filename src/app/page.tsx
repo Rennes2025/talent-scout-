@@ -20,7 +20,6 @@ export default function ProfilJoueur() {
 
           {/* Chips positions */}
           <div className="flex flex-wrap gap-2">
-            <span className="scout-chip">⚽ MILIEU</span>
             <span className="scout-chip">AILIER</span>
             <span className="scout-chip">LATÉRAL</span>
             <span className="scout-chip" style={{color:'#dbe3ed', borderColor:'rgba(219,227,237,0.25)'}}>17 ANS</span>
@@ -45,7 +44,7 @@ export default function ProfilJoueur() {
                 <span style={{color:'#e9c349'}}>MEKDADI</span>
               </h1>
               <p style={{color:'#c4c6cf', fontSize:'14px', marginTop:'8px', maxWidth:'480px', lineHeight:1.6}}>
-                Né le 20 juin 2008 · 1m77 · Pied gauche — Talent polyvalent
+                Né le 23 juin 2008 · 1m77 · Pied gauche — Talent polyvalent
                 alliant technique, vision et explosivité sur les deux côtés du terrain.
               </p>
             </div>
@@ -55,7 +54,7 @@ export default function ProfilJoueur() {
               {[
                 { val: '1M77', label: 'Taille' },
                 { val: 'G', label: 'Pied' },
-                { val: '3', label: 'Postes' },
+                { val: '2', label: 'Postes' },
               ].map((s) => (
                 <div key={s.label} className="glass-card px-4 py-3 flex flex-col items-center min-w-[68px]">
                   <span style={{fontFamily:'Oswald,sans-serif', fontSize:'24px', fontWeight:700, color:'#e9c349', lineHeight:1}}>{s.val}</span>
@@ -110,10 +109,10 @@ export default function ProfilJoueur() {
       <section className="px-4 md:px-10 py-8 w-full max-w-[1280px] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
-            { icon: 'cake',          label: 'Date de naissance', val: '20 juin 2008' },
+            { icon: 'cake',          label: 'Date de naissance', val: '23 juin 2008' },
             { icon: 'straighten',    label: 'Taille',             val: '1m77' },
             { icon: 'sports_soccer', label: 'Pied fort',          val: 'Gauche' },
-            { icon: 'swap_horiz',    label: 'Polyvalence',        val: 'Milieu · Ailier · Latéral' },
+            { icon: 'swap_horiz',    label: 'Polyvalence',        val: 'Ailier · Latéral' },
           ].map((item) => (
             <div key={item.label} className="glass-card p-4 flex flex-col gap-1">
               <span className="material-symbols-outlined" style={{color:'#e9c349', fontSize:'20px'}}>{item.icon}</span>
@@ -208,8 +207,8 @@ export default function ProfilJoueur() {
               Un profil rare et complet
             </h3>
             <p style={{color:'#c4c6cf', fontSize:'14px', lineHeight:1.7, marginBottom:'16px'}}>
-              Anwar MEKDADI est un joueur polyvalent né le 20 juin 2008 (17 ans), capable d&apos;évoluer
-              aussi bien en milieu de terrain, ailier ou latéral. Pied gauche naturel mais à l&apos;aise
+              Anwar MEKDADI est un joueur polyvalent né le 23 juin 2008 (17 ans), capable d&apos;évoluer
+              aussi bien ailier ou latéral. Pied gauche naturel mais à l&apos;aise
               des deux côtés, il allie vision du jeu, technique et explosivité.
             </p>
             <p style={{color:'#c4c6cf', fontSize:'14px', lineHeight:1.7, marginBottom:'20px'}}>
