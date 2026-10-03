@@ -22,7 +22,8 @@ export default function ProfilJoueur() {
           <div className="flex flex-wrap gap-2">
             <span className="scout-chip">AILIER</span>
             <span className="scout-chip">LATÉRAL</span>
-            <span className="scout-chip" style={{color:'#dbe3ed', borderColor:'rgba(219,227,237,0.25)'}}>17 ANS</span>
+            <span className="scout-chip" style={{color:'#4ade80', borderColor:'rgba(74,222,128,0.4)'}}>SÉNIOR R2</span>
+            <span className="scout-chip" style={{color:'#dbe3ed', borderColor:'rgba(219,227,237,0.25)'}}>18 ANS</span>
             <span className="scout-chip" style={{color:'#dbe3ed', borderColor:'rgba(219,227,237,0.25)'}}>🇫🇷 FRANCE</span>
             <span className="scout-chip" style={{color:'#dbe3ed', borderColor:'rgba(219,227,237,0.25)'}}>🇲🇦 MAROC</span>
           </div>
@@ -44,8 +45,8 @@ export default function ProfilJoueur() {
                 <span style={{color:'#e9c349'}}>MEKDADI</span>
               </h1>
               <p style={{color:'#c4c6cf', fontSize:'14px', marginTop:'8px', maxWidth:'480px', lineHeight:1.6}}>
-                Né le 23 juin 2008 · 1m77 · Pied gauche — Talent polyvalent
-                alliant technique, vision et explosivité sur les deux côtés du terrain.
+                Né le 23 juin 2008 · 18 ans · 1m77 · Pied gauche — Sénior Régional 2,
+                ailier/latéral alliant technique, vision et explosivité sur les deux côtés du terrain.
               </p>
             </div>
 
@@ -112,7 +113,7 @@ export default function ProfilJoueur() {
             { icon: 'cake',          label: 'Date de naissance', val: '23 juin 2008' },
             { icon: 'straighten',    label: 'Taille',             val: '1m77' },
             { icon: 'sports_soccer', label: 'Pied fort',          val: 'Gauche' },
-            { icon: 'swap_horiz',    label: 'Polyvalence',        val: 'Ailier · Latéral' },
+            { icon: 'emoji_events',  label: 'Niveau',             val: 'Sénior R2' },
           ].map((item) => (
             <div key={item.label} className="glass-card p-4 flex flex-col gap-1">
               <span className="material-symbols-outlined" style={{color:'#e9c349', fontSize:'20px'}}>{item.icon}</span>
@@ -207,8 +208,8 @@ export default function ProfilJoueur() {
               Un profil rare et complet
             </h3>
             <p style={{color:'#c4c6cf', fontSize:'14px', lineHeight:1.7, marginBottom:'16px'}}>
-              Anwar MEKDADI est un joueur polyvalent né le 23 juin 2008 (17 ans), capable d&apos;évoluer
-              aussi bien ailier ou latéral. Pied gauche naturel mais à l&apos;aise
+              Anwar MEKDADI est un joueur polyvalent né le 23 juin 2008 (18 ans), évoluant en
+              Sénior Régional 2. Ailier ou latéral, pied gauche naturel mais à l&apos;aise
               des deux côtés, il allie vision du jeu, technique et explosivité.
             </p>
             <p style={{color:'#c4c6cf', fontSize:'14px', lineHeight:1.7, marginBottom:'20px'}}>
