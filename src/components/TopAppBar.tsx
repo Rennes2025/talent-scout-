@@ -17,6 +17,7 @@ export default function TopAppBar() {
     { href: "/videos",  label: t.nav.videos },
     { href: "/contact", label: t.nav.contact },
     { href: "/agenda",  label: t.nav.agenda },
+    { href: "/agents",  label: t.nav.agents },
   ];
 
   const langs: Lang[] = ["fr", "en", "ar"];

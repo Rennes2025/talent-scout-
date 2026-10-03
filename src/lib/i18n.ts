@@ -8,6 +8,7 @@ export const translations = {
       videos:   "Vidéos",
       contact:  "Contact",
       agenda:   "Agenda",
+      agents:   "Agents",
     },
     profile: {
       born:        "Né le",
@@ -110,6 +111,7 @@ export const translations = {
       videos:   "Videos",
       contact:  "Contact",
       agenda:   "Agenda",
+      agents:   "Agents",
     },
     profile: {
       born:        "Born",
@@ -212,6 +214,7 @@ export const translations = {
       videos:   "الفيديوهات",
       contact:  "التواصل",
       agenda:   "الجدول",
+      agents:   "الوكلاء",
     },
     profile: {
       born:        "تاريخ الميلاد",
