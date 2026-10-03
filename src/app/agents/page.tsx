@@ -41,7 +41,7 @@ export default function AgentsPage() {
                   <animate attributeName="r" from="12" to="24" dur="2.5s" repeatCount="indefinite" />
                   <animate attributeName="opacity" from="0.4" to="0" dur="2.5s" repeatCount="indefinite" />
                 </circle>
-                <text x="383" y="251" fontFamily="Oswald,sans-serif" fontSize="10" fill="#dbe3ed" textAnchor="start" textTransform="uppercase" letterSpacing="0.06em">Rennes</text>
+                <text x="383" y="251" fontFamily="Oswald,sans-serif" fontSize="10" fill="#dbe3ed" textAnchor="start" letterSpacing="0.06em" style={{textTransform:"uppercase"}}>Rennes</text>
                 <text x="383" y="263" fontFamily="Oswald,sans-serif" fontSize="8" fill="rgba(233,195,73,0.7)" textAnchor="start">Talentz Sport Mgmt</text>
               </g>
 
