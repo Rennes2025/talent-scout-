@@ -64,7 +64,11 @@ export function formatValue(value: number | null, unit: string | null): string {
 
 /** Accepte « 4,12 », « 4.12 » ou « 4"12 ». */
 export function parseDecimal(raw: string): number | null {
-  const cleaned = raw.trim().replace(/["\s]/g, (m) => (m === '"' ? "." : "")).replace(",", ".");
+  const cleaned = raw
+    .trim()
+    .replace(/["\s]/g, (m) => (m === '"' ? "." : ""))
+    .replace(",", ".")
+    .replace(/^[−–]/, "-");
   if (!cleaned) return null;
   const value = Number(cleaned);
   return Number.isFinite(value) ? value : null;
