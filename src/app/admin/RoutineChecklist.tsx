@@ -116,7 +116,7 @@ function ChecklistItem({ row, date, canCheck }: { row: ChecklistRow; date: strin
             onChange={(e) => setDetail(e.target.value)}
             onBlur={saveDetail}
             onKeyDown={(e) => e.key === "Enter" && (e.target as HTMLInputElement).blur()}
-            placeholder={row.target}
+            placeholder="Comme prévu"
             maxLength={200}
             className="flex-1 min-w-0 rounded-md px-3 py-2"
             style={{ background: "#0c141b", border: "1px solid rgba(219,227,237,0.12)", color: "#dbe3ed", fontSize: 14 }}
