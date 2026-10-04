@@ -77,6 +77,13 @@ export default function GoalForm({ goal }: { goal: Goal | null }) {
               </div>
             ))}
           </div>
+          <label className="flex items-start gap-3 cursor-pointer" style={{ fontSize: 14, color: "#c4c6cf", lineHeight: 1.4 }}>
+            <input type="checkbox" name="cumulative" defaultChecked={goal?.cumulative} style={{ accentColor: "#e9c349", width: 18, height: 18, marginTop: 1 }} />
+            <span>
+              Cumul : chaque saisie s&apos;ajoute au total
+              <span style={{ display: "block", fontSize: 12, color: "#8e9099" }}>Pour les buts, passes décisives… Sinon, chaque saisie remplace la dernière mesure (sprint, poids…).</span>
+            </span>
+          </label>
           <p style={{ fontSize: 12, color: "#8e9099", lineHeight: 1.5 }}>
             Marche dans les deux sens : un temps qui doit baisser (4,30 → 4,00 s) ou un total qui doit monter (0 → 15).
           </p>

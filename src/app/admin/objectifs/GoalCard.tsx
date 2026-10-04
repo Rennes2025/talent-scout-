@@ -131,10 +131,9 @@ function MetricBlock({ goal, progress, disabled }: { goal: Goal; progress: numbe
   const [message, setMessage] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
 
-  function submit(e: React.FormEvent) {
-    e.preventDefault();
+  function send(raw: string) {
     startTransition(async () => {
-      const result = await updateCurrentValue(goal.id, value);
+      const result = await updateCurrentValue(goal.id, raw);
       if (result.error) {
         setMessage(result.error);
       } else {
@@ -144,12 +143,17 @@ function MetricBlock({ goal, progress, disabled }: { goal: Goal; progress: numbe
     });
   }
 
+  function submit(e: React.FormEvent) {
+    e.preventDefault();
+    send(value);
+  }
+
   return (
     <div className="rounded-lg p-3 flex flex-col gap-2" style={{ background: "#0c141b", border: "1px solid rgba(219,227,237,0.08)" }}>
       <span style={{ fontSize: 11, color: "#8e9099", letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 600 }}>{goal.metric_label}</span>
       <div className="grid grid-cols-3 gap-2" style={{ fontVariantNumeric: "tabular-nums" }}>
         <Figure label="Départ" value={formatValue(goal.start_value, goal.unit)} />
-        <Figure label="Actuel" value={formatValue(goal.current_value, goal.unit)} strong />
+        <Figure label={goal.cumulative ? "Total" : "Actuel"} value={formatValue(goal.current_value, goal.unit)} strong />
         <Figure label="Cible" value={goal.target_value === null ? "À définir" : formatValue(goal.target_value, goal.unit)} />
       </div>
       {progress === null && (
@@ -159,12 +163,24 @@ function MetricBlock({ goal, progress, disabled }: { goal: Goal; progress: numbe
       )}
       {!disabled && (
         <form onSubmit={submit} className="flex gap-2">
+          {goal.cumulative && (
+            <button
+              type="button"
+              onClick={() => send("1")}
+              disabled={pending}
+              aria-label={`Ajouter 1 à ${goal.metric_label}`}
+              className="px-4 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+              style={{ background: "rgba(74,222,128,0.12)", color: "#4ade80", border: "1px solid rgba(74,222,128,0.4)", fontWeight: 700, fontSize: 15, cursor: "pointer", opacity: pending ? 0.5 : 1 }}
+            >
+              +1
+            </button>
+          )}
           <input
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            inputMode="decimal"
-            placeholder={`Nouvelle mesure${goal.unit ? ` (${goal.unit})` : ""}`}
-            aria-label={`Nouvelle mesure ${goal.metric_label}`}
+            inputMode={goal.cumulative ? "numeric" : "decimal"}
+            placeholder={goal.cumulative ? "À ajouter" : `Nouvelle mesure${goal.unit ? ` (${goal.unit})` : ""}`}
+            aria-label={goal.cumulative ? `Nombre à ajouter à ${goal.metric_label}` : `Nouvelle mesure ${goal.metric_label}`}
             className="flex-1 min-w-0 rounded-md px-3 py-2"
             style={{ background: "#182028", border: "1px solid rgba(219,227,237,0.12)", color: "#dbe3ed", fontSize: 15 }}
           />
@@ -174,9 +190,12 @@ function MetricBlock({ goal, progress, disabled }: { goal: Goal; progress: numbe
             className="px-4 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
             style={{ background: "#e9c349", color: "#0c141b", fontWeight: 700, fontSize: 13, border: "none", cursor: "pointer", opacity: pending || !value.trim() ? 0.5 : 1 }}
           >
-            OK
+            {goal.cumulative ? "Ajouter" : "OK"}
           </button>
         </form>
+      )}
+      {goal.cumulative && !disabled && (
+        <p style={{ fontSize: 12, color: "#8e9099" }}>Après chaque match, ajoute ce qu&apos;il a fait. Une erreur ? Tape −1 pour corriger.</p>
       )}
       {message && <p role="alert" style={{ fontSize: 12, color: "#f87171" }}>{message}</p>}
     </div>

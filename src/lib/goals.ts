@@ -29,6 +29,8 @@ export type Goal = {
   start_value: number | null;
   current_value: number | null;
   target_value: number | null;
+  /** true : chaque saisie s'ajoute au total (buts). false : elle remplace la mesure (sprint). */
+  cumulative: boolean;
   status: "en_cours" | "atteint";
   achieved_at: string | null;
   sort_order: number;

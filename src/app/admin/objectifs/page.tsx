@@ -17,7 +17,7 @@ export default async function ObjectifsPage({
 
   const supabase = await createClient();
   const [{ data: goalRows }, { data: stepRows }] = await Promise.all([
-    supabase.from("goals").select("id, title, horizon, due_date, metric_label, unit, start_value, current_value, target_value, status, achieved_at, sort_order, created_at"),
+    supabase.from("goals").select("id, title, horizon, due_date, metric_label, unit, start_value, current_value, target_value, cumulative, status, achieved_at, sort_order, created_at"),
     supabase.from("goal_steps").select("id, goal_id, title, done, sort_order, created_at").order("sort_order").order("created_at"),
   ]);
 

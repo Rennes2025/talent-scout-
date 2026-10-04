@@ -50,9 +50,17 @@ export async function updateCurrentValue(goalId: string, raw: string): Promise<{
   if (value === null) return { error: "Entre un nombre, par exemple 4,12." };
 
   const supabase = await db();
-  const { data: goal } = await supabase.from("goals").select("start_value").eq("id", goalId).single();
-  const patch: Record<string, number> = { current_value: value };
-  if (goal && goal.start_value === null) patch.start_value = value;
+  const { data: goal } = await supabase
+    .from("goals")
+    .select("start_value, current_value, cumulative")
+    .eq("id", goalId)
+    .single();
+  if (!goal) return { error: "Objectif introuvable." };
+
+  const patch: Record<string, number> = goal.cumulative
+    ? { current_value: Number(goal.current_value ?? 0) + value }
+    : { current_value: value };
+  if (goal.start_value === null) patch.start_value = goal.cumulative ? 0 : value;
 
   const { error } = await supabase.from("goals").update(patch).eq("id", goalId);
   if (error) return { error: "Enregistrement impossible. Réessaie." };
@@ -89,6 +97,7 @@ export async function saveGoal(_prev: GoalFormState, formData: FormData): Promis
   const startRaw = String(formData.get("start_value") ?? "");
   const currentRaw = String(formData.get("current_value") ?? "");
   const targetRaw = String(formData.get("target_value") ?? "");
+  const cumulative = formData.get("cumulative") === "on";
 
   if (!title) return { error: "Donne un titre à l'objectif." };
   if (!HORIZON_IDS.includes(horizon)) return { error: "Choisis un horizon." };
@@ -110,6 +119,7 @@ export async function saveGoal(_prev: GoalFormState, formData: FormData): Promis
     start_value: metricLabel ? start ?? current : null,
     current_value: metricLabel ? current : null,
     target_value: metricLabel ? target : null,
+    cumulative: Boolean(metricLabel) && cumulative,
   };
 
   const supabase = await db();
