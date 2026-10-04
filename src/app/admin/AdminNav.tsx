@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 const tabs = [
   { href: "/admin",           icon: "today",          label: "Aujourd'hui" },
+  { href: "/admin/routine",   icon: "edit_note",      label: "Routine" },
   { href: "/admin/objectifs", icon: "flag",           label: "Objectifs" },
   { href: "/admin/mesures",   icon: "monitor_weight", label: "Mesures" },
   { href: "/admin/coach",     icon: "sports",         label: "Coach" },
@@ -49,7 +50,7 @@ export function AdminBottomTabs() {
   const pathname = usePathname();
   return (
     <nav
-      className="md:hidden fixed bottom-0 left-0 right-0 z-50 grid grid-cols-4"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-50 grid grid-cols-5"
       style={{
         background: "rgba(16,24,32,0.95)",
         backdropFilter: "blur(16px)",
