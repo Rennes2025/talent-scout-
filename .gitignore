@@ -56,3 +56,5 @@ public/WhatsApp*
 
 # Claude
 .claude/
+
+!.env.example

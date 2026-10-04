@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import TopAppBar from "@/components/TopAppBar";
-import BottomNav from "@/components/BottomNav";
+import SiteChrome from "@/components/SiteChrome";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 export const metadata: Metadata = {
@@ -28,11 +27,7 @@ export default function RootLayout({
       </head>
       <body className="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
         <LanguageProvider>
-          <TopAppBar />
-          <main className="flex-grow pt-16 pb-24 md:pb-0">
-            {children}
-          </main>
-          <BottomNav />
+          <SiteChrome>{children}</SiteChrome>
         </LanguageProvider>
       </body>
     </html>
